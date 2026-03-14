@@ -592,7 +592,8 @@ footer {
   </a>
   <ul class="nav-links">
     <li><a href="#schedule">Расписание</a></li>
-    <li><a href="#about">О нас</a></li>
+    <li><a href="#team">Команда</a></li>
+    <li><a href="#about">Подход</a></li>
     <li><a href="#contacts" class="nav-cta">Написать</a></li>
   </ul>
   <div class="burger" onclick="toggleMenu()">
@@ -601,18 +602,17 @@ footer {
 </nav>
 <div class="mobile-menu" id="mob-menu">
   <a href="#schedule" onclick="toggleMenu()">Расписание</a>
-  <a href="#about" onclick="toggleMenu()">О нас</a>
+  <a href="#about" onclick="toggleMenu()">Подход</a>
   <a href="#contacts" onclick="toggleMenu()">Контакты</a>
 </div>
 
-<!-- HERO -->
+<!-- HERO — intro block only -->
 <section id="hero">
   <div class="container">
     <div class="hero-inner">
-
       <!-- Left -->
       <div class="fade-up">
-        <div class="hero-badge"><div class="badge-dot"></div>Офлайн · Онлайн · Тбилиси · 2026</div>
+        <div class="hero-badge"><div class="badge-dot"></div>Онлайн · Офлайн · <svg style="display:inline;vertical-align:-2px;margin:0 2px;" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Тбилиси</div>
         <h1 class="hero-title">
           <span class="line-bold">Обучение</span>
           <span class="line-bold">специалистов</span>
@@ -623,45 +623,15 @@ footer {
           <a href="#schedule" class="btn-primary">Расписание</a>
           <a href="#contacts" class="btn-dark">Написать нам</a>
         </div>
-
-        <!-- Кому -->
-        <div style="margin-bottom:14px;">
-          <div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:900;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;">Для кого</div>
-          <div style="display:flex;flex-wrap:wrap;gap:7px;">
-            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.82);border:1px solid rgba(255,255,255,0.95);padding:5px 14px;border-radius:50px;font-size:0.73rem;font-weight:700;color:var(--text-2);box-shadow:0 2px 8px rgba(30,60,100,0.06);">Массажисты с нуля</div>
-            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.82);border:1px solid rgba(255,255,255,0.95);padding:5px 14px;border-radius:50px;font-size:0.73rem;font-weight:700;color:var(--text-2);box-shadow:0 2px 8px rgba(30,60,100,0.06);">Повышение квалификации</div>
-            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.82);border:1px solid rgba(255,255,255,0.95);padding:5px 14px;border-radius:50px;font-size:0.73rem;font-weight:700;color:var(--text-2);box-shadow:0 2px 8px rgba(30,60,100,0.06);">Тренеры ЛФК и фитнеса</div>
-          </div>
-        </div>
-
-        <!-- АЛГОРИТМ / СТРУКТУРА / БАЛАНС -->
-        <div class="concept-pillars" style="grid-template-columns:1fr 1fr 1fr;max-width:520px;">
-          <div class="cp fade-up s1">
-            <div class="cp-icon">◈</div>
-            <div class="cp-label">Алгоритм</div>
-            <div class="cp-text">Чёткий протокол с каждым клиентом</div>
-          </div>
-          <div class="cp fade-up s2">
-            <div class="cp-icon">⬡</div>
-            <div class="cp-label">Структура</div>
-            <div class="cp-text">Системный подход к телу и работе</div>
-          </div>
-          <div class="cp fade-up s3">
-            <div class="cp-icon">◎</div>
-            <div class="cp-label">Баланс</div>
-            <div class="cp-text">Безопасно для клиента и тренера</div>
-          </div>
-        </div>
       </div>
-
-      <!-- Right — stat cards -->
+      <!-- Right — advantage cards -->
       <div class="hero-right fade-up s2">
         <div class="adv-card glass-ir float1">
           <div class="adv-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <div class="adv-txt">
-            <div class="adv-title">Только практики</div>
+            <div class="adv-title">От практиков</div>
             <div class="adv-desc">Отбираем преподавателей, которые работают с клиентами, имеют высокую возвращаемость и реальные отзывы</div>
           </div>
         </div>
@@ -671,7 +641,7 @@ footer {
           </div>
           <div class="adv-txt">
             <div class="adv-title">Трудоустройство</div>
-            <div class="adv-desc">Пул компаний-партнёров, которым регулярно нужны специалисты с хорошей практикой</div>
+            <div class="adv-desc">Пул компаний-партнёров, которым регулярно нужны специалисты</div>
           </div>
         </div>
         <div class="adv-card glass-sm float3">
@@ -684,42 +654,122 @@ footer {
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
+
+<!-- ДЛЯ КОГО -->
+<section id="for-whom" style="padding:60px 24px;">
+  <div class="container">
+    <span class="section-label fade-up">Для кого</span>
+    <h2 class="fade-up" style="margin-bottom:32px;">Найдите себя</h2>
+    <div style="display:grid;grid-template-columns:1fr;gap:12px;" class="forkwhom-grid">
+      <div class="glass fade-up s1" style="display:flex;align-items:flex-start;gap:14px;padding:18px 20px;border-radius:16px;">
+        <span style="font-size:1.3rem;flex-shrink:0;margin-top:2px;">💆</span>
+        <div>
+          <div style="font-family:'Unbounded',sans-serif;font-size:0.78rem;font-weight:700;color:var(--text);margin-bottom:4px;">Массажист с опытом</div>
+          <div style="font-family:'Manrope',sans-serif;font-size:0.82rem;color:var(--text-2);line-height:1.65;">Хочу углубить технику, разобраться в механике тела и расти в профессии</div>
+        </div>
+      </div>
+      <div class="glass fade-up s2" style="display:flex;align-items:flex-start;gap:14px;padding:18px 20px;border-radius:16px;">
+        <span style="font-size:1.3rem;flex-shrink:0;margin-top:2px;">🏃</span>
+        <div>
+          <div style="font-family:'Unbounded',sans-serif;font-size:0.78rem;font-weight:700;color:var(--text);margin-bottom:4px;">Тренер фитнеса или ЛФК</div>
+          <div style="font-family:'Manrope',sans-serif;font-size:0.82rem;color:var(--text-2);line-height:1.65;">Есть база анатомии — хочу работать точнее и системнее с телом клиента</div>
+        </div>
+      </div>
+      <div class="glass-ir fade-up s3" style="display:flex;align-items:flex-start;gap:14px;padding:18px 20px;border-radius:16px;">
+        <span style="font-size:1.3rem;flex-shrink:0;margin-top:2px;">✨</span>
+        <div>
+          <div style="font-family:'Unbounded',sans-serif;font-size:0.78rem;font-weight:700;color:var(--text);margin-bottom:4px;">Начинаю с нуля — хочу в массаж</div>
+          <div style="font-family:'Manrope',sans-serif;font-size:0.82rem;color:var(--text-2);line-height:1.65;">Осваиваю профессию с самого начала: техника, анатомия, работа с клиентом</div>
+        </div>
+      </div>
+      <div class="glass fade-up s4" style="display:flex;align-items:flex-start;gap:14px;padding:18px 20px;border-radius:16px;">
+        <span style="font-size:1.3rem;flex-shrink:0;margin-top:2px;">🔬</span>
+        <div>
+          <div style="font-family:'Unbounded',sans-serif;font-size:0.78rem;font-weight:700;color:var(--text);margin-bottom:4px;">Интересуюсь телом и движением</div>
+          <div style="font-family:'Manrope',sans-serif;font-size:0.82rem;color:var(--text-2);line-height:1.65;">Не специалист, но хочу понять биомеханику, улучшить качество тела и двигаться осознаннее</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@media (min-width: 768px) { .forkwhom-grid, .forkwhom-grid { grid-template-columns: 1fr 1fr !important; } }
+@media (min-width: 768px) { #for-whom .forkwhom-grid { grid-template-columns: 1fr 1fr; } }
+</style>
+
+<!-- КАК МЫ УЧИМ: АЛГОРИТМ · БАЛАНС · СТРУКТУРА -->
+<section id="method" style="padding:60px 24px;">
+  <div class="container">
+    <span class="section-label fade-up">Принципы обучения</span>
+    <h2 class="fade-up" style="margin-bottom:10px;">Как устроено обучение</h2>
+    <p class="fade-up" style="font-size:0.88rem;max-width:520px;margin-bottom:36px;">Три принципа, которые делают знания рабочими — а не просто красивыми на бумаге.</p>
+    <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="method-grid">
+      <div class="glass-ir fade-up s1" style="padding:28px 28px;">
+        <div style="font-family:'Unbounded',sans-serif;font-size:0.6rem;font-weight:900;letter-spacing:0.18em;color:rgba(55,128,205,0.7);margin-bottom:10px;">01</div>
+        <h3 style="font-size:1.1rem;margin-bottom:10px;">Алгоритм</h3>
+        <p style="font-size:0.84rem;line-height:1.75;color:var(--text-2);">Системный подход к работе с телом и клиентом. На каждом курсе вы получаете не просто набор техник, а чёткий протокол: как оценить состояние, выстроить логику работы и адаптировать её под конкретный запрос.</p>
+      </div>
+      <div class="glass fade-up s2" style="padding:28px 28px;">
+        <div style="font-family:'Unbounded',sans-serif;font-size:0.6rem;font-weight:900;letter-spacing:0.18em;color:rgba(55,128,205,0.7);margin-bottom:10px;">02</div>
+        <h3 style="font-size:1.1rem;margin-bottom:10px;">Баланс</h3>
+        <p style="font-size:0.84rem;line-height:1.75;color:var(--text-2);">Теории и практики в каждом занятии. Короткая теория сразу отрабатывается в группе, разбираются реальные кейсы. Вы выходите с навыком, который уже применяли — а не с конспектом, который нужно «потом попробовать».</p>
+      </div>
+      <div class="glass fade-up s3" style="padding:28px 28px;">
+        <div style="font-family:'Unbounded',sans-serif;font-size:0.6rem;font-weight:900;letter-spacing:0.18em;color:rgba(55,128,205,0.7);margin-bottom:10px;">03</div>
+        <h3 style="font-size:1.1rem;margin-bottom:10px;">Структура</h3>
+        <p style="font-size:0.84rem;line-height:1.75;color:var(--text-2);">Рабочая тетрадь и база знаний остаются с вами. Материалы разработаны методологом так, чтобы информация усваивалась последовательно — и к ней можно было вернуться в любой момент в работе.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@media (min-width: 768px) { .method-grid { grid-template-columns: 1fr 1fr 1fr !important; } }
+</style>
 
 <!-- SCHEDULE -->
 <section id="schedule">
   <div class="container">
     <span class="section-label fade-up">Расписание</span>
     <h2 class="fade-up" style="margin-bottom:8px;">Ближайшие обучения</h2>
-    <p class="fade-up" style="font-size:0.88rem;max-width:500px;">Если остались вопросы по датам или темам — смело пишите, подскажем и поможем выбрать подходящий курс.</p>
+    <p class="fade-up" style="font-size:0.88rem;max-width:500px;">Если остались вопросы по датам или темам — смело пишите, поможем выбрать подходящий курс.
+      <a href="#contacts" style="display:inline-flex;align-items:center;gap:5px;margin-left:8px;background:rgba(255,255,255,0.82);border:1px solid rgba(255,255,255,0.95);padding:4px 12px;border-radius:50px;font-size:0.71rem;font-weight:800;color:var(--text-2);text-decoration:none;box-shadow:0 2px 8px rgba(30,60,100,0.06);vertical-align:middle;">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Написать
+      </a>
+    </p>
 
     <div class="schedule-grid" style="margin-top:40px;">
 
-      <!-- FEATURED — Дыхание + Пирамида -->
-      <a href="https://baseformasters.com/trainers" target="_blank" class="course-card glass-ir featured fade-up s1" style="text-decoration:none;">
+      <!-- FEATURED — Дыхание + Пирамида (not fully clickable) -->
+      <div class="course-card glass-ir featured fade-up s1">
         <div class="course-top">
-          <div>
-            <span class="course-tag tag-featured">Офлайн-курс · Тренерам</span>
-          </div>
+          <span class="course-tag tag-featured">Офлайн-курс · Для тренеров</span>
           <span class="course-dates-chip upcoming">22–26 апреля 2026</span>
         </div>
-        <div class="course-title">Дыхание + Пирамида тела</div>
-        <div class="course-desc">«Дыхание как инструмент повышения эффективности работы тренера» + «Пирамида функциональной возможности тела» — 5 дней глубокой практики. Блок 1 — диагностика дыхания, техники работы с клиентами. Блок 2 — мобильность, стабильность, движение, сила как единая система. Разбор кейсов и рабочая тетрадь.</div>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">
+        <div class="course-title">Дыхание + Пирамида функциональных возможностей тела</div>
+        <div class="course-desc" style="margin-bottom:14px;">5 дней глубокой практики и теории для тренеров.</div>
+        <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:18px;">
+          <div style="font-size:0.78rem;color:var(--text-2);line-height:1.7;font-family:'Manrope',sans-serif;"><strong style="color:var(--text);">Блок 1 · Дыхание как инструмент повышения эффективности работы тренера</strong> — диагностика дыхания, техники и инструменты для работы с клиентами. 3 дня.</div>
+          <div style="font-size:0.78rem;color:var(--text-2);line-height:1.7;font-family:'Manrope',sans-serif;"><strong style="color:var(--text);">Блок 2 · Пирамида функциональных возможностей тела</strong> — мобильность, стабильность, движение и сила как единая система. 2 дня.</div>
+          <div style="font-size:0.78rem;color:var(--text-2);line-height:1.7;font-family:'Manrope',sans-serif;"><strong style="color:var(--text);">На каждом занятии</strong> — разбор кейсов, рабочая тетрадь, живая практика в группе.</div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
           <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.70);border:1px solid rgba(255,255,255,0.95);padding:5px 14px;border-radius:50px;font-size:0.72rem;font-weight:700;color:var(--text-2);">Блок 1 · 22–24 апреля · 3 дня</div>
           <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.70);border:1px solid rgba(255,255,255,0.95);padding:5px 14px;border-radius:50px;font-size:0.72rem;font-weight:700;color:var(--text-2);">Блок 2 · 25–26 апреля · 2 дня</div>
         </div>
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
-          <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(80,155,220,0.12);border:1.5px solid rgba(80,155,220,0.25);color:rgba(55,128,205,1);font-size:0.74rem;font-weight:900;padding:5px 14px;border-radius:50px;font-family:'Manrope',sans-serif;">✦ экономия 200 GEL при оба блоках</div>
+          <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(80,155,220,0.12);border:1.5px solid rgba(80,155,220,0.25);color:rgba(55,128,205,1);font-size:0.74rem;font-weight:900;padding:5px 14px;border-radius:50px;font-family:'Manrope',sans-serif;">✦ Экономия 200 GEL при покупке двух блоков</div>
         </div>
         <div class="course-footer">
           <div class="course-meta">
             <div class="course-meta-item">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Тбилиси, Ваке
+              Тбилиси
             </div>
             <div class="course-meta-item">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -730,17 +780,17 @@ footer {
               Светлана Наумова
             </div>
           </div>
-          <span class="course-arrow">
+          <a href="https://baseformasters.com/trainers" target="_blank" class="btn-dark" style="padding:8px 20px;font-size:0.76rem;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
             Подробнее
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-          </span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
         </div>
-      </a>
+      </div>
 
       <!-- Массаж лица -->
       <div class="course-card glass fade-up s2">
         <div class="course-top">
-          <span class="course-tag">Курс · Массажистам</span>
+          <span class="course-tag">Офлайн-курс · Для массажистов</span>
           <span class="course-dates-chip upcoming">30 апр — 3 мая 2026</span>
         </div>
         <div class="course-title">Массаж лица</div>
@@ -765,7 +815,7 @@ footer {
           <div class="course-meta">
             <div class="course-meta-item">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Тбилиси, Ваке
+              Тбилиси
             </div>
             <div class="course-meta-item">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -781,10 +831,13 @@ footer {
       </div>
 
       <!-- Глубина и выносливость -->
-      <div class="course-card glass fade-up s4">
+      <div class="course-card glass fade-up s3">
         <div class="course-top">
-          <span class="course-tag">Мастер-класс · Массажистам</span>
-          <span class="course-dates-chip upcoming">15–17 мая 2026</span>
+          <span class="course-tag">Курс · Для массажистов</span>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;">
+            <span class="course-tag" style="background:rgba(80,155,220,0.10);border-color:rgba(80,155,220,0.22);color:rgba(55,128,205,0.9);">🌐 Онлайн</span>
+            <span class="course-dates-chip upcoming">Офлайн · 15–17 мая 2026</span>
+          </div>
         </div>
         <div class="course-title">Глубина и выносливость</div>
         <div class="course-desc">Научим работать глубоко и точно — без перегруза для себя и с пользой для клиента. Техники при гипертонусе, спортивный массаж и эргономика для выносливости и чувствительности рук. Ведёт Евгений Тараканов.</div>
@@ -799,7 +852,33 @@ footer {
               Евгений Тараканов
             </div>
           </div>
-          <span class="prereg-chip" onclick="window.location='#contacts'">Предзапись →</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span class="prereg-chip" onclick="window.location='#contacts'">Офлайн — предзапись →</span>
+            <a href="https://t.me/Base_for_masters" target="_blank" class="btn-dark" style="padding:7px 18px;font-size:0.72rem;">Онлайн — лист ожидания</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Баланс тела -->
+      <div class="course-card glass fade-up s4">
+        <div class="course-top">
+          <span class="course-tag">Курс · Для массажистов</span>
+          <span class="course-tag" style="background:rgba(80,155,220,0.10);border-color:rgba(80,155,220,0.22);color:rgba(55,128,205,0.9);">🌐 Онлайн</span>
+        </div>
+        <div class="course-title">Баланс тела</div>
+        <div class="course-desc">«Баланс тела: стопы, таз, челюсть» — учимся выявлять и корректировать нарушения осанки через работу со стопами, тазом и челюстью. Курс доступен онлайн, проходите в любое удобное время. Ведёт Даниил Худяков.</div>
+        <div class="course-footer">
+          <div class="course-meta">
+            <div class="course-meta-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Онлайн-курс
+            </div>
+            <div class="course-meta-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              Даниил Худяков
+            </div>
+          </div>
+          <a href="https://t.me/Base_for_masters" target="_blank" class="btn-dark" style="padding:8px 22px;font-size:0.74rem;">Онлайн — лист ожидания</a>
         </div>
       </div>
 
@@ -810,73 +889,214 @@ footer {
 <!-- ABOUT -->
 <section id="about">
   <div class="container">
-    <span class="section-label fade-up">О нас</span>
+    <span class="section-label fade-up">Наш подход</span>
     <div class="about-inner">
       <div class="fade-up">
         <h2 style="margin-bottom:16px;">Не учим по шаблону</h2>
         <div class="about-quote glass-ir" style="margin-bottom:20px;">
           <blockquote>«Наша концепция — индивидуальный подход, упор на практику и формирование собственного стиля. Помогаем специалистам развиваться, опираясь на уже имеющиеся навыки, усиливая технику.»</blockquote>
         </div>
-        <p style="font-size:0.86rem;line-height:1.75;">Base for Masters — образовательная платформа для тренеров и массажистов. Мы объединяем практикующих специалистов высокого уровня и создаём пространство для профессионального роста в Тбилиси.</p>
-      </div>
-      <div class="fade-up s2">
-        <div class="about-pillars">
-          <div class="about-pillar glass-sm"><h4>Алгоритм</h4><p>Чёткий протокол с каждым типом запроса клиента</p></div>
-          <div class="about-pillar glass-sm"><h4>Структура</h4><p>Системный взгляд на тело — не набор приёмов, а логика</p></div>
-          <div class="about-pillar glass-sm"><h4>Баланс</h4><p>Безопасно и эффективно — для клиента и специалиста</p></div>
-          <div class="about-pillar glass-sm"><h4>Практика</h4><p>Живая работа, а не теория ради теории</p></div>
+        <p style="font-size:0.86rem;line-height:1.75;margin-bottom:20px;">Base for Masters — образовательная платформа для тренеров и массажистов. Мы объединяем практикующих специалистов высокого уровня и создаём пространство для профессионального роста.</p>
+
+        <!-- Ритм занятия -->
+        <div style="margin-bottom:24px;">
+          <div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:900;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-3);margin-bottom:12px;">Ритм каждого занятия</div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
+            <div style="background:rgba(255,255,255,0.82);border:1px solid rgba(255,255,255,0.95);border-radius:14px;padding:12px 10px;text-align:center;box-shadow:0 2px 8px rgba(30,60,100,0.06);">
+              <div style="font-family:'Unbounded',sans-serif;font-size:0.55rem;font-weight:700;color:var(--text-3);margin-bottom:4px;">01</div>
+              <div style="font-family:'Unbounded',sans-serif;font-size:0.62rem;font-weight:700;color:var(--text);">ТЕОРИЯ</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.82);border:1px solid rgba(255,255,255,0.95);border-radius:14px;padding:12px 10px;text-align:center;box-shadow:0 2px 8px rgba(30,60,100,0.06);">
+              <div style="font-family:'Unbounded',sans-serif;font-size:0.55rem;font-weight:700;color:var(--text-3);margin-bottom:4px;">02</div>
+              <div style="font-family:'Unbounded',sans-serif;font-size:0.62rem;font-weight:700;color:var(--text);">ПРАКТИКА</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.82);border:1px solid rgba(255,255,255,0.95);border-radius:14px;padding:12px 10px;text-align:center;box-shadow:0 2px 8px rgba(30,60,100,0.06);">
+              <div style="font-family:'Unbounded',sans-serif;font-size:0.55rem;font-weight:700;color:var(--text-3);margin-bottom:4px;">03</div>
+              <div style="font-family:'Unbounded',sans-serif;font-size:0.62rem;font-weight:700;color:var(--text);">КЕЙСЫ</div>
+            </div>
+            <div style="background:rgba(215,238,255,0.70);border:1px solid rgba(149,190,245,0.30);border-radius:14px;padding:12px 10px;text-align:center;box-shadow:0 2px 8px rgba(30,60,100,0.06);">
+              <div style="font-family:'Unbounded',sans-serif;font-size:0.55rem;font-weight:700;color:var(--text-3);margin-bottom:4px;">04</div>
+              <div style="font-family:'Unbounded',sans-serif;font-size:0.62rem;font-weight:700;color:var(--text);">РЕФЛЕКСИЯ</div>
+            </div>
+          </div>
+          <p style="font-size:0.76rem;color:var(--text-3);line-height:1.65;margin-top:10px;">Короткая теория + отработка в группе + разбор реальных ситуаций. Рабочая тетрадь остаётся с вами.</p>
         </div>
+      </div>
+
+      <div class="fade-up s2" style="display:flex;flex-direction:column;gap:14px;">
+
+        <!-- Как выбираем тренеров -->
+        <div class="glass-sm" style="padding:20px 22px;">
+          <div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:900;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-3);margin-bottom:10px;">Как мы выбираем преподавателей</div>
+          <p style="font-size:0.82rem;line-height:1.72;color:var(--text-2);">Выбираем экспертов по ценностям и включённости — не по количеству регалий. Нам важно, чтобы преподаватель относился к своему делу неравнодушно: работал с опорой на опыт, постоянно учился и видел каждого клиента, а не просто выполнял протокол. Таких специалистов мы ищем и находим.</p>
+        </div>
+
+        <!-- Как делается курс -->
+        <div class="glass-ir" style="padding:20px 22px;">
+          <div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:900;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-3);margin-bottom:10px;">Как создаётся курс</div>
+          <p style="font-size:0.82rem;line-height:1.72;color:var(--text-2);">Каждый курс разрабатывается вместе с экспертом и методологом. Программа проходит несколько итераций на практикующих специалистах и дорабатывается с учётом их обратной связи — только потом выходит в открытый набор.</p>
+        </div>
+
       </div>
     </div>
   </div>
 </section>
 
-<!-- VALERIA -->
-<section id="valeria" style="padding:60px 24px 80px;">
+
+<!-- TEAM -->
+<section id="team" style="padding:60px 24px 80px;">
   <div class="container">
-    <span class="section-label fade-up">Методолог</span>
+    <span class="section-label fade-up">Команда</span>
+    <h2 class="fade-up" style="margin-bottom:8px;">Кто ведёт курсы</h2>
+    <p class="fade-up" style="font-size:0.88rem;max-width:520px;margin-bottom:44px;">Практикующие специалисты, которые работают с реальными клиентами и постоянно развиваются.</p>
 
-    <div style="display:grid;grid-template-columns:1fr;gap:32px;align-items:start;" class="valeria-grid">
+    <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="team-grid">
 
-      <!-- Photo -->
-      <div class="fade-up s1" style="display:flex;justify-content:center;">
-        <div class="glass-ir" style="padding:10px;border-radius:28px;display:inline-block;">
-          <img src="https://updatestudiotbilisi-hash.github.io/base_for__masters/photo/team/valeria-rubacheva.webp"
-               alt="Валерия Рубачева"
-               style="width:240px;height:285px;object-fit:cover;border-radius:20px;display:block;object-position:center 12%;">
+      <!-- Валерия Рубачева — первой как методолог всех курсов -->
+      <div class="glass team-card fade-up s1" style="border-left:3px solid rgba(80,155,220,0.30);">
+        <div class="team-photo-wrap">
+          <img src="https://updatestudiotbilisi-hash.github.io/base_for__masters/photo/team/valeria-rubacheva.webp" alt="Валерия Рубачева" style="object-position:center 12%;">
+        </div>
+        <div class="team-body">
+          <div class="team-role" style="color:rgba(55,128,205,0.85);">Методолог всех курсов</div>
+          <h3 class="team-name">Валерия Рубачева</h3>
+          <p class="team-bio">Переводит экспертизу преподавателей в структуру, понятную студенту. Выстраивает логику каждого курса — от порядка тем до формулировок в рабочей тетради. Её задача: чтобы знания усваивались последовательно, без перегруза, с опорой на практику.</p>
+          <div class="team-tags">
+            <span class="ttag ttag-blue">Методология обучения</span>
+            <span class="ttag ttag-blue">Структура программ</span>
+            <span class="ttag ttag-blue">Рабочие тетради</span>
+          </div>
         </div>
       </div>
 
-      <!-- Text -->
-      <div class="fade-up s2" style="display:flex;flex-direction:column;gap:0;">
-
-        <h2 style="margin-bottom:4px;line-height:1.1;">Валерия<br>Рубачева</h2>
-        <div style="font-family:'Manrope',sans-serif;font-size:0.72rem;font-weight:900;letter-spacing:0.18em;text-transform:uppercase;color:rgba(75,148,218,0.75);margin-bottom:24px;">Методолог Base for Masters</div>
-
-        <!-- Lead -->
-        <div class="glass" style="padding:18px 22px;margin-bottom:16px;border-left:3px solid rgba(75,148,218,0.35);">
-          <p style="font-size:0.9rem;font-weight:600;color:var(--text);line-height:1.7;font-family:'Manrope',sans-serif;">Переводит экспертизу преподавателей в структуру, понятную студенту — выстраивает логику каждого курса от порядка тем до формулировок в рабочей тетради.</p>
+      <!-- Светлана Наумова -->
+      <div class="glass-ir team-card fade-up s1">
+        <div class="team-photo-wrap">
+          <img src="https://updatestudiotbilisi-hash.github.io/base_for__masters/photo/team/svetlana-naumova.webp" alt="Светлана Наумова">
         </div>
-
-        <!-- Detail -->
-        <p style="font-size:0.84rem;line-height:1.8;color:var(--text-2);font-family:'Manrope',sans-serif;margin-bottom:22px;">Её задача — чтобы знания не просто передавались, а усваивались: последовательно, без перегруза, с опорой на практику. Именно методологический каркас делает курсы Base for Masters системными, а не набором техник.</p>
-
-        <!-- Tags -->
-        <div style="display:flex;gap:8px;flex-wrap:wrap;">
-          <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(75,148,218,0.09);border:1px solid rgba(75,148,218,0.22);padding:5px 14px;border-radius:50px;font-size:0.71rem;font-weight:800;color:rgba(55,128,205,0.9);font-family:'Manrope',sans-serif;">Методология обучения</div>
-          <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.82);border:1px solid rgba(255,255,255,0.95);padding:5px 14px;border-radius:50px;font-size:0.71rem;font-weight:700;color:var(--text-2);font-family:'Manrope',sans-serif;">Структура программ</div>
-          <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.82);border:1px solid rgba(255,255,255,0.95);padding:5px 14px;border-radius:50px;font-size:0.71rem;font-weight:700;color:var(--text-2);font-family:'Manrope',sans-serif;">Рабочие тетради</div>
-          <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.82);border:1px solid rgba(255,255,255,0.95);padding:5px 14px;border-radius:50px;font-size:0.71rem;font-weight:700;color:var(--text-2);font-family:'Manrope',sans-serif;">Логика подачи материала</div>
+        <div class="team-body">
+          <div class="team-role">Преподаватель</div>
+          <h3 class="team-name">Светлана Наумова</h3>
+          <p class="team-bio">Тренер, который знает: хорошая техника не работает, если дыхание «проседает». Специализируется на дыхании как инструменте эффективности тренера и функциональной работе с телом.</p>
+          <div class="team-tags">
+            <span class="ttag">Дыхание</span>
+            <span class="ttag">Функциональное движение</span>
+            <span class="ttag">Пирамида тела</span>
+          </div>
+          <div class="team-theme">
+            <div class="team-theme-label">Тема курса</div>
+            Дыхание как инструмент повышения эффективности + Пирамида функциональных возможностей тела
+          </div>
         </div>
-
       </div>
+
+      <!-- Николай Дадыгин -->
+      <div class="glass team-card fade-up s2">
+        <div class="team-photo-wrap">
+          <img src="https://updatestudiotbilisi-hash.github.io/base_for__masters/photo/team/nikolai-dadygin.webp" alt="Николай Дадыгин">
+        </div>
+        <div class="team-body">
+          <div class="team-role">Преподаватель</div>
+          <h3 class="team-name">Николай Дадыгин</h3>
+          <p class="team-bio">Более 16 лет в массаже и 10 лет врачебной практики. Сочетает телесную работу с клиническим мышлением. Специализируется на сложных и хронических состояниях.</p>
+          <div class="team-tags">
+            <span class="ttag">Клиническое мышление</span>
+            <span class="ttag">Хронические состояния</span>
+            <span class="ttag">Патогенез боли</span>
+          </div>
+          <div class="team-theme">
+            <div class="team-theme-label">С ним ты научишься</div>
+            Понимать патогенез боли и причины функциональных нарушений. Выстраивать работу в зависимости от диагноза. Видеть тело как единую взаимосвязанную систему.
+          </div>
+        </div>
+      </div>
+
+      <!-- Даниил Курицын -->
+      <div class="glass team-card fade-up s3">
+        <div class="team-photo-wrap">
+          <img src="https://updatestudiotbilisi-hash.github.io/base_for__masters/photo/team/daniil-kuritsyn.webp" alt="Даниил Курицын">
+        </div>
+        <div class="team-body">
+          <div class="team-role">Преподаватель</div>
+          <h3 class="team-name">Даниил Курицын</h3>
+          <p class="team-bio">Специалист, который ищет причину, а не работает со следствием. В диалоге с телом и клиентом — понимает, где нарушена опора. Особенно глубоко работает со стопами, челюстью и тазом.</p>
+          <div class="team-tags">
+            <span class="ttag">Постуральный баланс</span>
+            <span class="ttag">Стопы · Таз · Челюсть</span>
+            <span class="ttag">Диагностика осанки</span>
+          </div>
+          <div class="team-theme">
+            <div class="team-theme-label">С ним ты научишься</div>
+            Глубоко работать со стопами как основой осанки. Понимать взаимосвязь стоп, таза и челюсти. Применять техники при плоскостопии и дисфункциях ВНЧС.
+          </div>
+        </div>
+      </div>
+
+      <!-- Евгений Тараканов -->
+      <div class="glass team-card fade-up s4">
+        <div class="team-photo-wrap">
+          <img src="https://updatestudiotbilisi-hash.github.io/base_for__masters/photo/team/evgeniy-tarakanov.webp" alt="Евгений Тараканов">
+        </div>
+        <div class="team-body">
+          <div class="team-role">Преподаватель</div>
+          <h3 class="team-name">Евгений Тараканов</h3>
+          <p class="team-bio">6 лет профессиональной практики. Медицинское образование «Лечебное дело». Специализируется на глубокой проработке мышц без боли и перегруза — знает, как сохранить ресурс мастера при интенсивной работе.</p>
+          <div class="team-tags">
+            <span class="ttag">Медицинский массаж</span>
+            <span class="ttag">Спортивный массаж</span>
+            <span class="ttag">Эргономика мастера</span>
+          </div>
+          <div class="team-theme">
+            <div class="team-theme-label">С ним ты научишься</div>
+            Работать глубоко и точно, не теряя чувствительности. Выстраивать эргономику движений и сохранять выносливость. Делать массаж безопасным — для клиента и для себя.
+          </div>
+        </div>
+      </div>
+
+      <!-- Татьяна Хакимова -->
+      <div class="glass-ir team-card fade-up s5">
+        <div class="team-photo-wrap">
+          <img src="https://updatestudiotbilisi-hash.github.io/base_for__masters/photo/team/tatyana-khakimova.webp" alt="Татьяна Хакимова">
+        </div>
+        <div class="team-body">
+          <div class="team-role">Преподаватель</div>
+          <h3 class="team-name">Татьяна Хакимова</h3>
+          <p class="team-bio">15 лет практики. Работает с телом как с единой системой, объединяя дыхание, ритм и технику в один поток. Её массаж — глубокий, плавный и по-настоящему индивидуальный.</p>
+          <div class="team-tags">
+            <span class="ttag">Массаж лица</span>
+            <span class="ttag">Анатомические поезда</span>
+            <span class="ttag">Целостный сеанс</span>
+          </div>
+          <div class="team-theme">
+            <div class="team-theme-label">С ней ты научишься</div>
+            Выстраивать целостный сеанс от стоп до лица. Управлять дыханием клиента при работе с зажимами. Работать с лицом через всё тело — эффективно и завершённо.
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <style>
-@media (min-width: 768px) {
-  .valeria-grid { grid-template-columns: auto 1fr !important; gap: 48px !important; align-items: start !important; }
+.team-grid { display:grid; grid-template-columns:1fr; gap:16px; }
+@media (min-width: 768px) { .team-grid { grid-template-columns: 1fr 1fr; } }
+.team-card { display:flex; flex-direction:row; overflow:hidden; transition:var(--t); min-height:200px; }
+.team-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-hover); }
+.team-photo-wrap { width:160px; min-width:160px; flex-shrink:0; overflow:hidden; border-radius:var(--radius) 0 0 var(--radius); }
+.team-photo-wrap img { width:100%; height:100%; object-fit:cover; object-position:center 20%; display:block; }
+.team-body { padding:20px 22px; display:flex; flex-direction:column; gap:7px; flex:1; min-width:0; }
+.team-role { font-family:'Manrope',sans-serif; font-size:0.62rem; font-weight:900; letter-spacing:0.16em; text-transform:uppercase; color:var(--text-3); }
+.team-name { font-family:'Unbounded',sans-serif; font-size:clamp(0.85rem,1.4vw,1rem); font-weight:600; color:var(--text); line-height:1.2; }
+.team-bio { font-family:'Manrope',sans-serif; font-size:0.78rem; color:var(--text-2); line-height:1.65; }
+.team-tags { display:flex; flex-wrap:wrap; gap:5px; margin-top:2px; }
+.ttag { background:rgba(255,255,255,0.80); border:1px solid rgba(255,255,255,0.95); padding:3px 10px; border-radius:50px; font-family:'Manrope',sans-serif; font-size:0.65rem; font-weight:700; color:var(--text-2); }
+.ttag-blue { background:rgba(80,155,220,0.10); border-color:rgba(80,155,220,0.22); color:rgba(55,128,205,0.9); }
+.team-theme { background:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.90); border-radius:10px; padding:9px 12px; font-family:'Manrope',sans-serif; font-size:0.73rem; color:var(--text-2); line-height:1.6; margin-top:2px; }
+.team-theme-label { font-size:0.58rem; font-weight:900; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-3); margin-bottom:4px; }
+@media (max-width: 500px) {
+  .team-card { flex-direction:column; }
+  .team-photo-wrap { width:100%; min-width:unset; height:200px; border-radius:var(--radius) var(--radius) 0 0; }
 }
 </style>
 
@@ -907,16 +1127,29 @@ footer {
         </a>
       </div>
       <div class="contact-card glass-ir fade-up s2">
-        <h3>Место</h3>
-        <a href="https://maps.app.goo.gl/R44HJmWZoMPyfrmn7" target="_blank" class="contact-link">
-          <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          2B Nikolioz Kipshidze St, Тбилиси, Ваке
-        </a>
-        <div style="margin-top:20px;padding:16px;background:rgba(255,255,255,0.55);border-radius:12px;border:1px solid rgba(255,255,255,0.90);">
-          <div style="font-size:0.72rem;font-weight:900;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:10px;">Ближайший курс</div>
-          <div style="font-family:'Unbounded',sans-serif;font-size:0.8rem;font-weight:700;color:var(--text);margin-bottom:4px;">Дыхание + Пирамида</div>
-          <div style="font-size:0.78rem;color:var(--text-2);font-weight:600;margin-bottom:12px;">22–26 апреля 2026</div>
-          <a href="https://baseformasters.com/trainers" class="btn-dark" style="display:inline-block;padding:9px 20px;font-size:0.74rem;">Записаться</a>
+        <h3>Ближайшие курсы</h3>
+        <div style="display:flex;flex-direction:column;gap:0;">
+          <a href="https://baseformasters.com/trainers" target="_blank" class="contact-link" style="flex-direction:column;align-items:flex-start;gap:3px;padding:14px 0;">
+            <div style="display:flex;align-items:center;gap:8px;width:100%;justify-content:space-between;">
+              <div style="font-family:'Unbounded',sans-serif;font-size:0.72rem;font-weight:700;color:var(--text);">Дыхание + Пирамида тела</div>
+              <span style="background:linear-gradient(135deg,rgba(80,155,220,0.90),rgba(60,135,210,0.95));color:#fff;font-size:0.62rem;font-weight:800;padding:3px 10px;border-radius:50px;white-space:nowrap;">→</span>
+            </div>
+            <div style="font-size:0.74rem;color:var(--text-3);font-family:'Manrope',sans-serif;">22–26 апреля 2026 · Тбилиси</div>
+          </a>
+          <div class="contact-link" style="flex-direction:column;align-items:flex-start;gap:3px;padding:14px 0;cursor:default;">
+            <div style="display:flex;align-items:center;gap:8px;width:100%;justify-content:space-between;">
+              <div style="font-family:'Unbounded',sans-serif;font-size:0.72rem;font-weight:700;color:var(--text);">Глубина и выносливость</div>
+              <span style="background:rgba(80,155,220,0.12);border:1px solid rgba(80,155,220,0.25);color:rgba(55,128,205,0.9);font-size:0.62rem;font-weight:800;padding:3px 10px;border-radius:50px;white-space:nowrap;">🌐 Онлайн</span>
+            </div>
+            <div style="font-size:0.74rem;color:var(--text-3);font-family:'Manrope',sans-serif;">Офлайн · 15–17 мая 2026 · Тбилиси</div>
+          </div>
+          <div class="contact-link" style="flex-direction:column;align-items:flex-start;gap:3px;padding:14px 0;cursor:default;border-bottom:none;">
+            <div style="display:flex;align-items:center;gap:8px;width:100%;justify-content:space-between;">
+              <div style="font-family:'Unbounded',sans-serif;font-size:0.72rem;font-weight:700;color:var(--text);">Баланс тела</div>
+              <span style="background:rgba(80,155,220,0.12);border:1px solid rgba(80,155,220,0.25);color:rgba(55,128,205,0.9);font-size:0.62rem;font-weight:800;padding:3px 10px;border-radius:50px;white-space:nowrap;">🌐 Онлайн</span>
+            </div>
+            <div style="font-size:0.74rem;color:var(--text-3);font-family:'Manrope',sans-serif;">Доступен в любое время</div>
+          </div>
         </div>
       </div>
     </div>
