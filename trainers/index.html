@@ -38,15 +38,6 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="https://updatestudiotbilisi-hash.github.io/base_for__masters/photo/fig/asset_01.webp">
-<link rel="preload" as="image" href="https://updatestudiotbilisi-hash.github.io/base_for__masters/photo/fig/asset_02.webp">
-<link rel="preload" as="image" href="https://updatestudiotbilisi-hash.github.io/base_for__masters/photo/fig/asset_03.webp">
-<link rel="preload" as="image" href="https://updatestudiotbilisi-hash.github.io/base_for__masters/photo/fig/asset_04.webp">
-<link rel="preload" as="image" href="https://updatestudiotbilisi-hash.github.io/base_for__masters/photo/fig/asset_05.webp">
-<link rel="preload" as="image" href="https://updatestudiotbilisi-hash.github.io/base_for__masters/photo/fig/asset_06.webp">
-<link rel="preload" as="image" href="https://updatestudiotbilisi-hash.github.io/base_for__masters/photo/fig/asset_07.webp">
-<link rel="preload" as="image" href="https://updatestudiotbilisi-hash.github.io/base_for__masters/photo/fig/asset_08.webp">
-<link rel="preload" as="image" href="https://updatestudiotbilisi-hash.github.io/base_for__masters/photo/fig/asset_09.webp">
 <style>
 /* ============================================================
    VARIABLES
@@ -1649,7 +1640,7 @@ footer {
       <div class="teacher-photo-wrap fade-up">
         <div>
           <div class="teacher-photo-frame">
-            <img src="https://updatestudiotbilisi-hash.github.io/base_for__masters/photo/team/svetlana-naumova.webp" alt="Светлана Наумова">
+            <img src="https://baseformasters.com/photo/team/svetlana-naumova.webp" alt="Светлана Наумова" loading="lazy" decoding="async">
           </div>
           <div class="teacher-photo-badge glass-sm"><span class="big-num">30</span><span class="badge-label">лет практики</span></div>
         </div>
@@ -1682,7 +1673,7 @@ footer {
     <div class="method-inner">
       <div class="method-card glass fade-up">
         <div class="method-top">
-          <img src="https://updatestudiotbilisi-hash.github.io/base_for__masters/photo/team/valeria-rubacheva.webp" alt="Валерия Рубачева" class="method-photo">
+          <img src="https://baseformasters.com/photo/team/valeria-rubacheva.webp" alt="Валерия Рубачева" class="method-photo" loading="lazy" decoding="async">
           <div><div class="method-name">Валерия Рубачева</div><div class="method-role">Главный методолог · Разработчик курса</div></div>
         </div>
         <p class="method-desc">Разработала программу, методологию и рабочую тетрадь. Проработала каждый блок совместно с преподавателями: структурно, понятно, применимо.</p>
@@ -1919,7 +1910,7 @@ footer {
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <a href="https://baseformasters.com" style="display:inline-block;"><div class="footer-logo"><img src="https://updatestudiotbilisi-hash.github.io/update-team-assets/base-for-masters/logo.webp" alt="Base for Masters" onerror="this.style.display='none'"></div></a>
+    <a href="https://baseformasters.com" style="display:inline-block;"><div class="footer-logo"><img src="https://updatestudiotbilisi-hash.github.io/update-team-assets/base-for-masters/logo.webp" alt="Base for Masters" loading="lazy" decoding="async" onerror="this.style.display='none'"></div></a>
     <p class="footer-text">Офлайн-курс для тренеров · Тбилиси, Ваке · 29 апреля – 3 мая 2026<br><a href="https://www.instagram.com/base_for__masters/" target="_blank" style="color:var(--text-2);text-decoration:none;font-weight:700;">@base_for__masters</a></p>
     <a href="https://baseformasters.com" style="display:inline-flex;align-items:center;gap:8px;background:rgba(24,24,32,0.88);border:1.5px solid rgba(255,255,255,0.14);padding:10px 24px;border-radius:50px;font-family:'Manrope',sans-serif;font-size:0.78rem;font-weight:800;color:#fff;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;box-shadow:0 6px 22px rgba(24,24,32,0.22),inset 0 1px 0 rgba(255,255,255,0.12);transition:all 0.3s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 32px rgba(24,24,32,0.3)'" onmouseout="this.style.transform='';this.style.boxShadow='0 6px 22px rgba(24,24,32,0.22),inset 0 1px 0 rgba(255,255,255,0.12)'">← Все курсы</a>
     <p class="footer-text" style="font-size:0.68rem;">© 2026 Base for Masters</p>
@@ -1961,6 +1952,16 @@ const ro = new IntersectionObserver(
 );
 fadeEls.forEach(el => ro.observe(el));
 
+function trackLead(block, messenger) {
+  if (typeof fbq === 'function') {
+    fbq('track', 'Lead', {
+      content_name: 'trainers_course',
+      content_category: block,
+      preferred_messenger: messenger
+    });
+  }
+}
+
 function handleSubmit() {
   const name     = document.getElementById('f-name').value.trim();
   const phone    = document.getElementById('f-phone').value.trim();
@@ -1993,11 +1994,13 @@ function handleSubmit() {
     .then(() => {
       document.getElementById('form-body').style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
+      trackLead(block, messenger);
     })
     .catch(() => {
       // no-cors always "fails" in catch but data was sent — show success anyway
       document.getElementById('form-body').style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
+      trackLead(block, messenger);
     });
 }
 
@@ -2005,14 +2008,20 @@ function handleSubmit() {
    FLOATING FIGURES — scroll-driven, no overlap, fast load
 ============================================================ */
 (function() {
-  const BASE = 'https://updatestudiotbilisi-hash.github.io/base_for__masters/photo/fig/';
+  const isLightMobile = window.matchMedia('(max-width: 767px)').matches;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const layer = document.getElementById('fig-layer');
+
+  if (isLightMobile || reduceMotion) {
+    if (layer) layer.remove();
+    return;
+  }
+
+  const BASE = 'https://baseformasters.com/photo/fig/';
   const ASSETS = [
     'asset_01.webp','asset_02.webp','asset_03.webp','asset_04.webp','asset_05.webp',
     'asset_06.webp','asset_07.webp','asset_08.webp','asset_09.webp'
   ];
-
-  // Preload all assets immediately so they're in cache
-  ASSETS.forEach(a => { const l = new Image(); l.src = BASE + a; });
 
   // Each pair is diagonal: top-right ↔ bottom-left, then flipped, then centred
   const CONFIGS = [
@@ -2056,7 +2065,6 @@ function handleSubmit() {
   });
 
   // Remove placeholder div
-  const layer = document.getElementById('fig-layer');
   if (layer) layer.remove();
 
   function getScrollFrac() {
