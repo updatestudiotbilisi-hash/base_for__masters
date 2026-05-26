@@ -714,16 +714,56 @@
   }
   .review {
     border-radius: 18px;
-    background: var(--card);
+    background: #111;
     border: 1px solid var(--line);
     padding: 22px;
-    min-height: 250px;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+  }
+  .review::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,.16), rgba(0,0,0,.34) 45%, rgba(0,0,0,.78));
+    z-index: 1;
+  }
+  .review video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(.92);
+  }
+  .review-content {
+    position: relative;
+    z-index: 2;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-  .review p { color: var(--muted); font-size: 13px; }
-  .review strong { display: block; margin-top: 22px; font-size: 13px; }
+  .review p {
+    color: rgba(255,255,255,.88);
+    font-size: 13px;
+    line-height: 1.55;
+    margin-top: auto;
+  }
+  .review strong {
+    display: block;
+    width: fit-content;
+    margin-bottom: 18px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.86);
+    color: var(--ink);
+    font-size: 13px;
+  }
 
   .faq {
     max-width: 880px;
@@ -1159,10 +1199,30 @@
       <p>Главное, что повторяется в отзывах: мало людей, много практики, понятный алгоритм и коррекция техники в моменте.</p>
     </div>
     <div class="reviews">
-      <article class="review"><p>«Понравились глубокие техники, дыхание, работа с грудными мышцами и финальные элементы. Мы сначала вспоминали схему сами, а потом собирали её по пунктам.»</p><strong>Анастасия</strong></article>
-      <article class="review"><p>«Таня постоянно проговаривала, что за чем идёт и зачем это нужно. Мы проходили технику ступенчато, и в конце я понимала всю последовательность.»</p><strong>Ирина</strong></article>
-      <article class="review"><p>«Таня сразу поправляла постановку рук и ошибки, поэтому было просто, понятно и без ощущения перегруза даже с опытом работы с лицом.»</p><strong>Амалия</strong></article>
-      <article class="review"><p>«Теории было ровно столько, сколько нужно, и она появлялась в момент практики. Мы сами были моделями и чувствовали разницу.»</p><strong>Руслан</strong></article>
+      <article class="review">
+        <video autoplay muted loop playsinline preload="none">
+          <source src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/base_for__masters/c83e8096e78c1a07a684bde2a779567a0836f3ac/photo/Nastya%281%29.mp4" type="video/mp4">
+        </video>
+        <div class="review-content"><strong>Анастасия</strong><p>«Понравились глубокие техники, дыхание, работа с грудными мышцами и финальные элементы. На обучении мы сначала вспоминали схему сами, а потом собирали её по пунктам — так лучше запомнилась логика массажа.»</p></div>
+      </article>
+      <article class="review">
+        <video autoplay muted loop playsinline preload="none">
+          <source src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/base_for__masters/c83e8096e78c1a07a684bde2a779567a0836f3ac/photo/ira.mp4" type="video/mp4">
+        </video>
+        <div class="review-content"><strong>Ирина</strong><p>«Таня постоянно проговаривала, что за чем идёт и зачем это нужно. Мы проходили технику ступенчато: часть, ещё часть, потом весь алгоритм. В конце я понимала всю последовательность.»</p></div>
+      </article>
+      <article class="review">
+        <video autoplay muted loop playsinline preload="none">
+          <source src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/base_for__masters/c83e8096e78c1a07a684bde2a779567a0836f3ac/photo/Amalia.mp4" type="video/mp4">
+        </video>
+        <div class="review-content"><strong>Амалия</strong><p>«Мы повторяли каждый круг и каждый раз проговаривали последовательность. Таня сразу поправляла постановку рук и ошибки, поэтому было понятно и без ощущения перегруза.»</p></div>
+      </article>
+      <article class="review">
+        <video autoplay muted loop playsinline preload="none">
+          <source src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/base_for__masters/c83e8096e78c1a07a684bde2a779567a0836f3ac/photo/Ruslan.mp4" type="video/mp4">
+        </video>
+        <div class="review-content"><strong>Руслан</strong><p>«Теории было ровно столько, сколько нужно, и она появлялась в момент практики. Мы сами были моделями, чувствовали разницу и в финале собрали весь алгоритм как проверку.»</p></div>
+      </article>
     </div>
   </section>
 
