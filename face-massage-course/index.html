@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Массаж лица — новый вариант</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --page: #efefed;
+    --paper: #fbfbf8;
+    --card: #f4f4f1;
+    --line: #ddddda;
+    --ink: #191918;
+    --muted: #6f706c;
+    --soft: #a4a59f;
+    --accent: #cfe6ad;
+    --accent-2: #dcecc5;
+    --terra: #c96148;
+    --shadow: 0 24px 70px rgba(25,25,24,.08);
+    --radius: 18px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--page);
+    color: var(--ink);
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img, video { display: block; max-width: 100%; }
+
+  .page {
+    width: min(1240px, calc(100% - 32px));
+    margin: 32px auto;
+    background: var(--paper);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .wrap { padding: 0 54px; }
+
+  .nav {
+    height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+  }
+  .brand {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: -.05em;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fff;
+  }
+  .nav-links a {
+    padding: 9px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .nav-links a:hover { background: var(--card); color: var(--ink); }
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: var(--accent);
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+  }
+  .nav-cta::after { content: "→"; font-size: 14px; }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, .92fr) minmax(420px, 1.08fr);
+    gap: 18px;
+    min-height: 620px;
+    padding-bottom: 36px;
+  }
+  .hero-copy {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 36px 0 0;
+  }
+  .kicker {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: var(--card);
+    color: var(--muted);
+    font-size: 12px;
+  }
+  .kicker::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--terra);
+  }
+  h1 {
+    margin-top: 34px;
+    font-size: clamp(48px, 7vw, 90px);
+    line-height: .9;
+    letter-spacing: -.07em;
+    text-transform: uppercase;
+    font-weight: 800;
+    max-width: 620px;
+  }
+  .hero-lead {
+    margin-top: 24px;
+    max-width: 520px;
+    color: var(--muted);
+    font-size: 18px;
+  }
+  .hero-date-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+    max-width: 540px;
+  }
+  .hero-date-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 36px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: -.02em;
+  }
+  .hero-date-chip span { color: var(--terra); }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+  }
+  .btn {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    padding: 0 22px;
+    font-size: 13px;
+    font-weight: 800;
+  }
+  .btn.primary { background: var(--accent); border-color: var(--accent); }
+  .btn.dark { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .btn span { font-size: 16px; }
+
+  .mini-services {
+    width: min(460px, 100%);
+    margin-top: 34px;
+  }
+  .mini-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: var(--soft);
+  }
+  .mini-head strong { color: var(--ink); font-size: 13px; }
+  .service-line {
+    display: grid;
+    grid-template-columns: 44px 1fr auto 34px;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .service-thumb {
+    width: 44px;
+    height: 36px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    color: var(--ink);
+    font-size: 11px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #e4dfd6, #f7f4ee);
+  }
+  .service-thumb.t2 { background: linear-gradient(135deg, #dfe8d3, #f7f8f3); }
+  .service-thumb.t3 { background: linear-gradient(135deg, #ead8d1, #f9f2ee); }
+  .service-line strong { font-size: 13px; }
+  .service-line small { color: var(--muted); font-size: 11px; }
+  .arrow {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--card);
+    color: var(--ink);
+  }
+
+  .hero-media {
+    position: relative;
+    min-height: 620px;
+    border-radius: 22px;
+    overflow: hidden;
+    background: #d8d8d2;
+  }
+  .hero-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .media-top {
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    right: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .pin, .media-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 34px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.78);
+    backdrop-filter: blur(12px);
+    font-size: 12px;
+  }
+  .media-pill { background: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: .03em; }
+  .search-card {
+    position: absolute;
+    left: 50%;
+    top: 46%;
+    transform: translate(-50%, -50%);
+    width: min(460px, calc(100% - 40px));
+    min-height: 54px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 16px;
+    background: rgba(255,255,255,.9);
+    box-shadow: 0 14px 40px rgba(0,0,0,.12);
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .search-card strong { color: var(--ink); }
+  .floating-date {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    right: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .date-pill {
+    border-radius: 14px;
+    background: #fff;
+    padding: 12px;
+    min-height: 84px;
+  }
+  .date-pill small {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+  .date-pill strong {
+    display: block;
+    font-size: 18px;
+    letter-spacing: -.04em;
+  }
+  .date-pill span {
+    display: block;
+    margin-top: 4px;
+    color: var(--terra);
+    font-size: 11px;
+    font-weight: 800;
+  }
+
+  .section { padding: 72px 54px; border-top: 1px solid var(--line); }
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 28px;
+    align-items: flex-end;
+    margin-bottom: 30px;
+  }
+  .eyebrow {
+    color: var(--soft);
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: clamp(34px, 5vw, 64px);
+    line-height: .94;
+    letter-spacing: -.06em;
+    font-weight: 800;
+  }
+  .section-head p {
+    max-width: 420px;
+    color: var(--muted);
+    font-size: 16px;
+  }
+
+  .why {
+    display: grid;
+    grid-template-columns: 1fr 260px 1fr;
+    gap: 18px;
+    align-items: center;
+  }
+  .why-col {
+    display: grid;
+    gap: 18px;
+  }
+  .why-card {
+    min-height: 168px;
+    padding: 24px;
+    border-radius: var(--radius);
+    background: var(--card);
+    border: 1px solid var(--line);
+  }
+  .why-card small {
+    display: flex;
+    justify-content: space-between;
+    color: var(--soft);
+    font-size: 11px;
+    font-weight: 800;
+    margin-bottom: 30px;
+  }
+  .why-card strong {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 19px;
+    letter-spacing: -.04em;
+  }
+  .why-card p { color: var(--muted); font-size: 13px; }
+  .why-center {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    position: relative;
+    font-size: 32px;
+    line-height: .95;
+    letter-spacing: -.06em;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .why-center::before,
+  .why-center::after {
+    content: "";
+    position: absolute;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    inset: -20px;
+  }
+  .why-center::after { inset: -38px; opacity: .55; }
+
+  .dates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .flow-card {
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 28px;
+    background: #fff;
+    min-height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .flow-card.featured { background: var(--accent-2); border-color: #c4dba0; }
+  .flow-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 12px;
+  }
+  .flow-date {
+    margin-top: 34px;
+    font-size: clamp(32px, 4vw, 46px);
+    line-height: .92;
+    letter-spacing: -.06em;
+    font-weight: 800;
+  }
+  .flow-card p {
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .flow-card .spots {
+    width: fit-content;
+    margin-top: 22px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: var(--paper);
+    font-size: 12px;
+    color: var(--terra);
+    font-weight: 800;
+  }
+
+  .program-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .program-card {
+    border-radius: 20px;
+    min-height: 360px;
+    aspect-ratio: 1 / 1.08;
+    position: relative;
+    overflow: hidden;
+    background: var(--card);
+    border: 1px solid var(--line);
+  }
+  .program-card video, .program-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(.88);
+  }
+  .program-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 24px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(180deg, rgba(0,0,0,.38), rgba(0,0,0,.14) 48%, rgba(0,0,0,.56));
+  }
+  .program-overlay.dark { color: var(--ink); background: transparent; }
+  .program-overlay small {
+    width: fit-content;
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.22);
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .program-overlay.dark small { background: #fff; color: var(--muted); }
+  .program-overlay h3 {
+    max-width: 420px;
+    font-size: 30px;
+    line-height: .98;
+    letter-spacing: -.05em;
+    margin-bottom: 10px;
+  }
+  .program-overlay p { max-width: 560px; font-size: 14px; line-height: 1.55; }
+
+  .price-row {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 12px;
+  }
+  .price-box {
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 30px;
+    background: #fff;
+  }
+  .price-box.sale {
+    background: var(--ink);
+    color: #fff;
+    border-color: var(--ink);
+  }
+  .price-box small {
+    display: block;
+    color: var(--muted);
+    font-weight: 800;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: 24px;
+  }
+  .price-box.sale small { color: var(--accent); }
+  .price {
+    font-size: clamp(42px, 6vw, 78px);
+    line-height: .88;
+    letter-spacing: -.07em;
+    font-weight: 800;
+  }
+  .usd { margin-top: 10px; color: var(--muted); font-size: 18px; }
+  .price-box.sale .usd { color: rgba(255,255,255,.72); }
+  .price-box p { margin-top: 26px; color: var(--muted); max-width: 440px; }
+  .price-box.sale p { color: rgba(255,255,255,.76); }
+
+  .teacher-layout {
+    display: grid;
+    grid-template-columns: minmax(320px, .9fr) 1.1fr;
+    gap: 18px;
+    align-items: stretch;
+  }
+  .teacher-photo {
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    position: relative;
+    background: #ddd;
+    min-height: 620px;
+  }
+  .teacher-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    filter: saturate(.9);
+  }
+  .role-pill {
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    padding: 9px 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.84);
+    font-size: 12px;
+    font-weight: 800;
+  }
+  .teacher-card {
+    min-height: 620px;
+    border-radius: 22px;
+    border: 1px solid var(--line);
+    background: var(--card);
+    padding: 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .teacher-card h2 {
+    margin-top: 12px;
+    max-width: 520px;
+  }
+  .teacher-card p {
+    margin-top: 22px;
+    max-width: 620px;
+    color: var(--muted);
+    font-size: 16px;
+  }
+  .teacher-points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 34px;
+  }
+  .teacher-point {
+    min-height: 132px;
+    border-radius: 16px;
+    background: #fff;
+    padding: 18px;
+    border: 1px solid var(--line);
+  }
+  .teacher-point small {
+    display: block;
+    color: var(--soft);
+    font-size: 11px;
+    font-weight: 800;
+    margin-bottom: 18px;
+  }
+  .teacher-point strong {
+    display: block;
+    font-size: 18px;
+    line-height: .95;
+    letter-spacing: -.06em;
+  }
+
+  .method-strip {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: minmax(260px, .85fr) 1.15fr;
+    gap: 12px;
+    align-items: stretch;
+  }
+  .methodologist-card,
+  .method-step {
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    background: #fff;
+    padding: 24px;
+  }
+  .methodologist-card {
+    background: var(--accent-2);
+    border-color: #c4dba0;
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+  .methodologist-photo {
+    width: 92px;
+    aspect-ratio: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid rgba(25,25,24,.08);
+  }
+  .methodologist-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    filter: saturate(.92);
+  }
+  .methodologist-card h3 {
+    font-size: clamp(26px, 3.2vw, 40px);
+    line-height: .95;
+    letter-spacing: -.06em;
+    margin: 6px 0 14px;
+  }
+  .methodologist-card p,
+  .method-step p {
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .regalia-list {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .regalia-list span {
+    padding: 8px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.78);
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .method-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .method-step small {
+    display: block;
+    color: var(--soft);
+    font-size: 11px;
+    font-weight: 800;
+    margin-bottom: 34px;
+  }
+  .method-step strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 17px;
+    letter-spacing: -.04em;
+  }
+  .person-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+  }
+  .person-tags span {
+    padding: 8px 10px;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .reviews {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .review {
+    border-radius: 18px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: 22px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .review p { color: var(--muted); font-size: 13px; }
+  .review strong { display: block; margin-top: 22px; font-size: 13px; }
+
+  .faq {
+    max-width: 880px;
+    border-top: 1px solid var(--line);
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--line);
+  }
+  .faq-q {
+    width: 100%;
+    min-height: 76px;
+    padding: 24px 0;
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -.04em;
+  }
+  .faq-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--card);
+    display: grid;
+    place-items: center;
+    flex: 0 0 32px;
+    transition: transform .2s;
+  }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .24s ease;
+  }
+  .faq-a p { color: var(--muted); max-width: 760px; padding: 0 0 24px; }
+  .faq-item.open .faq-a { max-height: 220px; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  .contact {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 18px;
+    align-items: start;
+  }
+  .contact-panel {
+    border-radius: 22px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: 32px;
+    min-height: 100%;
+  }
+  .contact-panel h2 { margin-bottom: 22px; }
+  .contact-panel p { color: var(--muted); }
+  .contact-links {
+    display: grid;
+    gap: 10px;
+    margin-top: 28px;
+  }
+  .contact-links a {
+    width: fit-content;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: #fff;
+    font-size: 13px;
+  }
+  form {
+    display: grid;
+    gap: 10px;
+    border-radius: 22px;
+    background: #fff;
+    border: 1px solid var(--line);
+    padding: 18px;
+  }
+  input, select, textarea {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    min-height: 52px;
+    padding: 0 16px;
+    font: inherit;
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--paper);
+    outline: none;
+  }
+  textarea { min-height: 112px; padding-top: 14px; resize: vertical; }
+  input:focus, select:focus, textarea:focus { border-color: #b7c891; box-shadow: 0 0 0 4px rgba(207,230,173,.32); }
+  .submit {
+    border: 0;
+    border-radius: 14px;
+    min-height: 54px;
+    background: var(--accent);
+    color: var(--ink);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .note { color: var(--soft); font-size: 12px; }
+  .success { display: none; padding: 30px; text-align: center; color: var(--terra); }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 28px 54px;
+    border-top: 1px solid var(--line);
+    color: var(--soft);
+    font-size: 12px;
+  }
+
+  @media (max-width: 980px) {
+    .page { width: min(100% - 18px, 1240px); margin: 9px auto; border-radius: 18px; }
+    .wrap, .section { padding-left: 24px; padding-right: 24px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: 0; }
+    .hero-media { min-height: 540px; }
+    .why { grid-template-columns: 1fr; }
+    .why-center { display: none; }
+    .dates-grid, .reviews, .price-row, .contact { grid-template-columns: 1fr; }
+    .program-grid { grid-template-columns: 1fr; }
+    .program-card { aspect-ratio: 1 / .92; min-height: 300px; }
+    .teacher-layout, .method-strip { grid-template-columns: 1fr; }
+    .teacher-photo, .teacher-card { min-height: 0; }
+    .teacher-photo { aspect-ratio: 4 / 5; }
+    .method-steps { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    .wrap, .section { padding-left: 18px; padding-right: 18px; }
+    .nav { height: 66px; }
+    .hero-copy { padding-top: 18px; }
+    h1 { font-size: 50px; }
+    .hero-media { min-height: 520px; }
+    .floating-date { grid-template-columns: 1fr; }
+    .date-pill { min-height: 68px; }
+    .search-card { top: 36%; }
+    .section { padding-top: 54px; padding-bottom: 54px; }
+    .section-head { display: block; }
+    .section-head p { margin-top: 14px; }
+    h2 { font-size: 38px; }
+    footer { padding-left: 18px; padding-right: 18px; flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="wrap nav">
+    <a class="brand" href="#">BfM</a>
+    <nav class="nav-links" aria-label="Навигация">
+      <a href="#dates">Даты</a>
+      <a href="#program">Программа</a>
+      <a href="#team">Команда</a>
+      <a href="#price">Стоимость</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="nav-cta" href="#contact">Записаться</a>
+  </header>
+
+  <section class="wrap hero">
+    <div class="hero-copy">
+      <div>
+        <div class="kicker">Очно · Тбилиси · группа максимум 4 человека</div>
+        <h1>Курс по массажу лица, который сразу берёшь в работу</h1>
+        <p class="hero-lead">Практический курс для тех, кто хочет освоить базовый массаж лица, ручную лепку и основы буккального массажа в понятной последовательности.</p>
+        <div class="hero-date-strip" aria-label="Даты курса">
+          <a class="hero-date-chip" href="#contact"><span>01</span> 1–3 июня</a>
+          <a class="hero-date-chip" href="#contact"><span>02</span> 8–10 июня</a>
+          <a class="hero-date-chip" href="#contact"><span>03</span> 15–17 июня</a>
+        </div>
+        <div class="hero-actions">
+          <a class="btn primary" href="#dates">Выбрать даты <span>→</span></a>
+          <a class="btn" href="#program">Смотреть программу</a>
+        </div>
+      </div>
+
+      <div class="mini-services" aria-label="Что входит в курс">
+        <div class="mini-head"><strong>В курс входит</strong><span>3 техники</span></div>
+        <div class="service-line">
+          <span class="service-thumb">01</span>
+          <strong>Базовый массаж лица + Отработка</strong>
+          <small>День 01</small>
+          <span class="arrow">→</span>
+        </div>
+        <div class="service-line">
+          <span class="service-thumb t2">02</span>
+          <strong>Ручная лепка + Отработка</strong>
+          <small>День 02</small>
+          <span class="arrow">→</span>
+        </div>
+        <div class="service-line">
+          <span class="service-thumb t3">03</span>
+          <strong>Основы буккального + Отработка</strong>
+          <small>День 03</small>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <video autoplay muted loop playsinline preload="auto">
+        <source src="../photo/facial.mp4" type="video/mp4">
+      </video>
+      <div class="media-top">
+        <div class="pin">Татьяна Хакимова · 15+ лет практики</div>
+        <a class="media-pill" href="#contact">Заявка</a>
+      </div>
+      <div class="search-card">
+        <span>⌕</span>
+        <div><strong>Курс массажа лица</strong> · база, лепка, буккальный</div>
+      </div>
+      <div class="floating-date">
+        <a class="date-pill" href="#contact"><small>Поток 01</small><strong>1–3 июня</strong><span>3 дня</span></a>
+        <a class="date-pill" href="#contact"><small>Поток 02</small><strong>8–10 июня</strong><span>3 дня</span></a>
+        <a class="date-pill" href="#contact"><small>Поток 03</small><strong>15–17 июня</strong><span>3 дня</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Почему это обучение запоминается</div>
+        <h2>Почему мы?</h2>
+      </div>
+      <p>Курс собран вокруг практики: участники видят технику, делают сами, чувствуют её на себе как модели и сразу получают коррекцию рук.</p>
+    </div>
+    <div class="why">
+      <div class="why-col">
+        <div class="why-card"><small><span>Постановка рук</span><span>01</span></small><strong>Преподаватель рядом</strong><p>Татьяна лично корректирует захваты, давление, векторы и положение тела каждого участника.</p></div>
+        <div class="why-card"><small><span>Методика</span><span>02</span></small><strong>Понятный алгоритм</strong><p>Последовательность проговаривается много раз: что за чем идёт и зачем нужен каждый этап.</p></div>
+      </div>
+      <div class="why-center">Почему<br>мы?</div>
+      <div class="why-col">
+        <div class="why-card"><small><span>Формат</span><span>03</span></small><strong>Всего 4 человека</strong><p>Малая группа даёт время на ошибки, вопросы и движение в своём темпе.</p></div>
+        <div class="why-card"><small><span>После курса</span><span>04</span></small><strong>Видео на 2 месяца</strong><p>Рабочая тетрадь, схемы, алгоритмы и доступ к Telegram-каналу с материалами для отработки.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="dates">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Ближайшие потоки</div>
+        <h2>Даты курса</h2>
+      </div>
+      <p>Выберите поток в июне. В группе максимум 4 человека, поэтому места лучше бронировать заранее.</p>
+    </div>
+    <div class="dates-grid">
+      <a class="flow-card featured" href="#contact">
+        <div class="flow-top"><span>Поток 01</span><span>июнь</span></div>
+        <div>
+          <div class="flow-date">1–3<br>июня</div>
+          <p>3 дня практики: база, лепка и основы буккального.</p>
+          <div class="spots">Ранняя цена до 29 мая</div>
+        </div>
+      </a>
+      <a class="flow-card" href="#contact">
+        <div class="flow-top"><span>Поток 02</span><span>июнь</span></div>
+        <div>
+          <div class="flow-date">8–10<br>июня</div>
+          <p>Тот же полный протокол в малой группе.</p>
+          <div class="spots">Максимум 4 человека</div>
+        </div>
+      </a>
+      <a class="flow-card" href="#contact">
+        <div class="flow-top"><span>Поток 03</span><span>июнь</span></div>
+        <div>
+          <div class="flow-date">15–17<br>июня</div>
+          <p>Тот же полный протокол: база, лепка и основы буккального.</p>
+          <div class="spots">Максимум 4 человека</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="program">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Программа</div>
+        <h2>Три блока в одной логике</h2>
+      </div>
+      <p>Сначала база и подготовка тканей, затем скульптурная работа руками, потом основы буккального как продолжение общего протокола.</p>
+    </div>
+    <div class="program-grid">
+      <article class="program-card">
+        <video autoplay muted loop playsinline preload="none">
+          <source src="../photo/Base_face.mp4" type="video/mp4">
+        </video>
+        <div class="program-overlay">
+          <small>День 01</small>
+          <div><h3>Базовый массаж лица</h3><p>Разбираем подготовку клиента, дыхание, шею, грудные мышцы и лимфатический сброс. Ставим руки, давление и последовательность протокола.</p></div>
+        </div>
+      </article>
+      <article class="program-card">
+        <video autoplay muted loop playsinline preload="none">
+          <source src="../photo/Lepka.mp4" type="video/mp4">
+        </video>
+        <div class="program-overlay">
+          <small>День 02</small>
+          <div><h3>Ручная лепка</h3><p>Учимся моделировать ткани без масла: шея, подбородок, носогубка, скулы, зона глаз, уши, нос и лоб. Отрабатываем точность и фиксацию.</p></div>
+        </div>
+      </article>
+      <article class="program-card">
+        <video autoplay muted loop playsinline preload="none">
+          <source src="../photo/bucal.mp4" type="video/mp4">
+        </video>
+        <div class="program-overlay">
+          <small>День 03</small>
+          <div><h3>Основы буккального</h3><p>Осваиваем работу в перчатках изнутри щеки: линия челюсти, уголки рта, подскуловая область, губы, носогубка и жевательная мышца лица.</p></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="team">
+    <div class="teacher-layout">
+      <div class="teacher-photo">
+        <img src="../photo/team/tatiana_khakimova.webp" alt="Татьяна Хакимова">
+        <div class="role-pill">Преподаватель</div>
+      </div>
+      <div class="teacher-card">
+        <div>
+          <div class="eyebrow">Преподаватель курса</div>
+          <h2>Татьяна Хакимова</h2>
+          <p>Специалист массажа и коррекции фигуры с 15+ годами практики. На курсе Татьяна лично показывает технику, ставит руки каждому участнику и помогает почувствовать правильную глубину, тягу и вектор движения.</p>
+          <div class="person-tags">
+            <span>15+ лет практики</span>
+            <span>Массаж лица</span>
+            <span>Ручная лепка</span>
+            <span>Основы буккального</span>
+          </div>
+        </div>
+        <div class="teacher-points">
+          <div class="teacher-point"><small>01</small><strong>Ставит эргономику работы мастера</strong></div>
+          <div class="teacher-point"><small>02</small><strong>Поправляет руки в моменте</strong></div>
+          <div class="teacher-point"><small>03</small><strong>Объясняет логику движений</strong></div>
+          <div class="teacher-point"><small>04</small><strong>Ведёт каждого в своём темпе</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="method-strip">
+      <div class="methodologist-card">
+        <div class="methodologist-photo">
+          <img src="../photo/team/valeria-rubacheva.webp" alt="Валерия Рубачева">
+        </div>
+        <div>
+          <div class="eyebrow">Методолог</div>
+          <h3>Валерия Рубачева</h3>
+          <p>Валерия вместе с Татьяной доработала курс и провела тестовое обучение для смешанной группы массажистов с разным уровнем подготовки. После обратной связи от участников она собрала программу, которая подходит людям с разным темпом и разным способом восприятия информации.</p>
+        </div>
+        <div class="regalia-list">
+          <span>Методолог, Университетская гимназия МГУ</span>
+          <span>Руководитель ДПО, ДВФУ</span>
+          <span>Куратор программ БВШД</span>
+        </div>
+      </div>
+      <div class="method-steps">
+        <div class="method-step"><small>01</small><strong>Разные форматы</strong><p>Демонстрация, практика, схемы, рабочая тетрадь и видео после курса помогают учиться через зрение, слух, движение и запись.</p></div>
+        <div class="method-step"><small>02</small><strong>Ошибки в практике</strong><p>Участники сначала пробуют движение сами, потом вместе с преподавателем разбирают ошибки, поправляют руки и повторяют точнее.</p></div>
+        <div class="method-step"><small>03</small><strong>Рефлексия</strong><p>После практики вы возвращаетесь к последовательности: что запомнилось, где нужна опора и как превратить новый опыт в навык.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="price">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Стоимость</div>
+        <h2>Цена и ранняя покупка</h2>
+      </div>
+      <p>В стоимость входит обучение, рабочая тетрадь, личная постановка техники и доступ к видеоматериалам на 2 месяца.</p>
+    </div>
+    <div class="price-row">
+      <div class="price-box">
+        <small>Полная стоимость</small>
+        <div class="price">1500 лари</div>
+        <div class="usd">≈ $565</div>
+        <p>Оплата за весь курс целиком: 3 блока, практика в парах, рабочая тетрадь и доступ к Telegram-каналу с видеоматериалами на 2 месяца.</p>
+      </div>
+      <div class="price-box sale">
+        <small>При покупке до 29 мая</small>
+        <div class="price">1300 лари</div>
+        <div class="usd">≈ $490</div>
+        <p>Специальная стоимость для ранней записи. Количество мест ограничено размером группы.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reviews">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Отзывы</div>
+        <h2>Что говорят участники</h2>
+      </div>
+      <p>Главное, что повторяется в отзывах: мало людей, много практики, понятный алгоритм и коррекция техники в моменте.</p>
+    </div>
+    <div class="reviews">
+      <article class="review"><p>«Понравились глубокие техники, дыхание, работа с грудными мышцами и финальные элементы. Мы сначала вспоминали схему сами, а потом собирали её по пунктам.»</p><strong>Анастасия</strong></article>
+      <article class="review"><p>«Таня постоянно проговаривала, что за чем идёт и зачем это нужно. Мы проходили технику ступенчато, и в конце я понимала всю последовательность.»</p><strong>Ирина</strong></article>
+      <article class="review"><p>«Таня сразу поправляла постановку рук и ошибки, поэтому было просто, понятно и без ощущения перегруза даже с опытом работы с лицом.»</p><strong>Амалия</strong></article>
+      <article class="review"><p>«Теории было ровно столько, сколько нужно, и она появлялась в момент практики. Мы сами были моделями и чувствовали разницу.»</p><strong>Руслан</strong></article>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">FAQ</div>
+        <h2>Часто спрашивают</h2>
+      </div>
+    </div>
+    <div class="faq">
+      <div class="faq-item open"><button class="faq-q" type="button">Нужен ли опыт в массаже? <span class="faq-icon">+</span></button><div class="faq-a"><p>Опыт в массаже не нужен. Группа всего на 4 человека, выдаётся рабочая тетрадь и после курса открывается доступ к видеоматериалам. Преподаватель лично ставит технику каждому участнику, а каждый идёт в своём темпе.</p></div></div>
+      <div class="faq-item"><button class="faq-q" type="button">Можно пройти только одну технику? <span class="faq-icon">+</span></button><div class="faq-a"><p>На данный момент идёт только собранная программа из 3 блоков, и пройти её можно только полностью. Если вас интересует конкретная техника, оставьте заявку и напишите запрос в комментариях — мы свяжемся с вами, когда запустим обучение по конкретной технике.</p></div></div>
+      <div class="faq-item"><button class="faq-q" type="button">Сколько человек в группе? <span class="faq-icon">+</span></button><div class="faq-a"><p>Максимум 4 человека. Это принципиально: Татьяна ставит руки каждому участнику лично, разбирает ошибки сразу в процессе и помогает двигаться в своём темпе.</p></div></div>
+      <div class="faq-item"><button class="faq-q" type="button">Что остаётся после курса? <span class="faq-icon">+</span></button><div class="faq-a"><p>Рабочая тетрадь с теорией, схемами и алгоритмами. И доступ к Telegram-каналу с видеоматериалами на 2 месяца, чтобы отработать технику.</p></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="contact">
+      <div class="contact-panel">
+        <div class="eyebrow">Запись</div>
+        <h2>Оставьте заявку</h2>
+        <p>Ответим в ближайшее время, уточним поток, формат и свободные места. Без навязчивых звонков.</p>
+        <div class="contact-links">
+          <a href="https://t.me/Base_for_masters">@Base_for_masters</a>
+          <a href="https://www.instagram.com/base_for__masters/">@base_for__masters</a>
+          <a href="tel:+995505557367">+995 505 557 367</a>
+        </div>
+      </div>
+      <div>
+        <form id="cForm">
+          <input type="text" id="f-name" placeholder="Имя" required>
+          <input type="text" id="f-contact" placeholder="Телефон или Telegram" required>
+          <select id="f-flow">
+            <option value="" disabled selected>Удобный поток</option>
+            <option>Поток 1 · 1–3 июня</option>
+            <option>Поток 2 · 8–10 июня</option>
+            <option>Поток 3 · 15–17 июня</option>
+            <option>Ещё не определился(ась)</option>
+          </select>
+          <select id="f-msg">
+            <option value="" disabled selected>Удобный мессенджер</option>
+            <option>WhatsApp</option>
+            <option>Telegram</option>
+            <option>Instagram</option>
+          </select>
+          <textarea id="f-text" placeholder="Комментарий: интересующий поток, техника или вопрос"></textarea>
+          <button class="submit" id="submitBtn" type="submit">Записаться на курс</button>
+          <p class="note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+        </form>
+        <div class="success" id="sMsg">Заявка отправлена. Мы свяжемся с вами в ближайшее время.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>BASE for MASTERS · Массаж лица · Тбилиси</span>
+    <span>Офлайн-курс · Июнь 2025</span>
+  </footer>
+</main>
+
+<script>
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxWKlJ5xGekLfrUaJz4ImexF2LC696txFIRSEp9QhsTgAep7BPjJlhicmtvZldB6vGa/exec';
+
+  document.getElementById('cForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.textContent = 'Отправляем...';
+    btn.disabled = true;
+
+    const params = new URLSearchParams({
+      date: new Date().toLocaleString('ru-RU'),
+      name: document.getElementById('f-name').value,
+      phone: document.getElementById('f-contact').value,
+      block: '3-дневный курс массажа лица',
+      flow: document.getElementById('f-flow').value,
+      messenger: document.getElementById('f-msg').value,
+      message: document.getElementById('f-text').value,
+      source: 'website-face-massage-variant',
+    });
+
+    try {
+      await fetch(SCRIPT_URL + '?' + params.toString(), { method: 'GET', mode: 'no-cors' });
+      document.getElementById('cForm').style.display = 'none';
+      document.getElementById('sMsg').style.display = 'block';
+    } catch {
+      btn.textContent = 'Записаться на курс';
+      btn.disabled = false;
+    }
+  });
+
+  document.querySelectorAll('.faq-q').forEach((button) => {
+    button.addEventListener('click', () => {
+      const item = button.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach((faqItem) => faqItem.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>
