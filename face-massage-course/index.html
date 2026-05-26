@@ -866,9 +866,36 @@
     .hero-copy { padding-top: 18px; }
     h1 { font-size: 50px; }
     .hero-media { min-height: 520px; }
-    .floating-date { grid-template-columns: 1fr; }
-    .date-pill { min-height: 68px; }
-    .search-card { top: 36%; }
+    .floating-date {
+      grid-template-columns: 1fr;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      gap: 6px;
+    }
+    .date-pill {
+      min-height: 0;
+      border-radius: 12px;
+      padding: 9px 12px;
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      align-items: center;
+      gap: 10px;
+    }
+    .date-pill small {
+      font-size: 10px;
+      margin-bottom: 0;
+    }
+    .date-pill strong {
+      font-size: 20px;
+      white-space: nowrap;
+    }
+    .date-pill span {
+      margin-top: 0;
+      font-size: 10px;
+      white-space: nowrap;
+    }
+    .search-card { top: 38%; min-height: 46px; font-size: 12px; }
     .section { padding-top: 54px; padding-bottom: 54px; }
     .section-head { display: block; }
     .section-head p { margin-top: 14px; }
