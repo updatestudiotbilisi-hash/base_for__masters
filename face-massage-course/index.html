@@ -991,7 +991,32 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
     .program-card { aspect-ratio: 1 / .92; min-height: 300px; }
     .teacher-layout, .method-strip { grid-template-columns: 1fr; }
     .teacher-photo, .teacher-card { min-height: 0; }
-    .teacher-photo { aspect-ratio: 4 / 5; }
+    .teacher-photo {
+      width: min(100%, 430px);
+      margin: 0 auto;
+      aspect-ratio: 4 / 5;
+    }
+    .teacher-photo img { object-position: center top; }
+    .teacher-photo .role-pill {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .teacher-card {
+      text-align: center;
+      align-items: center;
+    }
+    .teacher-card h2,
+    .teacher-card p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .teacher-card .eyebrow {
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .teacher-card .person-tags { justify-content: center; }
+    .teacher-points { text-align: left; }
     .method-steps { grid-template-columns: 1fr; }
   }
 
