@@ -53,15 +53,18 @@
     gap: 22px;
   }
   .brand {
-    width: 36px;
+    min-width: 36px;
     height: 36px;
+    padding: 0 14px;
     border: 1px solid var(--line);
-    border-radius: 50%;
+    border-radius: 999px;
     display: grid;
     place-items: center;
     font-size: 11px;
     font-weight: 800;
-    letter-spacing: -.05em;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
   .nav-links {
     display: flex;
@@ -947,7 +950,7 @@
 <body>
 <main class="page">
   <header class="wrap nav">
-    <a class="brand" href="#">BfM</a>
+    <a class="brand" href="#">Base for Masters</a>
     <nav class="nav-links" aria-label="Навигация">
       <a href="#dates">Даты</a>
       <a href="#program">Программа</a>
