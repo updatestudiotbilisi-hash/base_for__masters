@@ -63,11 +63,18 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
   .wrap { padding: 0 54px; }
 
   .nav {
+    position: sticky;
+    top: 0;
+    z-index: 150;
     height: 74px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 22px;
+    background: rgba(251,251,248,.92);
+    border-bottom: 1px solid rgba(221,221,218,.72);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
   }
   .brand {
     min-width: 36px;
@@ -949,7 +956,7 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
     .page { width: min(100% - 18px, 1240px); margin: 9px auto; border-radius: 18px; }
     .wrap, .section { padding-left: 24px; padding-right: 24px; }
     body { padding-bottom: 78px; }
-    .nav { position: relative; z-index: 130; }
+    .nav { z-index: 150; }
     .nav-links {
       display: none;
       position: absolute;
