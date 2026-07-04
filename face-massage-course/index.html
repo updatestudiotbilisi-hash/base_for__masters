@@ -111,6 +111,20 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
     white-space: nowrap;
   }
   .nav-links a:hover { background: var(--card); color: var(--ink); }
+  .nav-links .all-courses-link {
+    background: var(--ink);
+    color: #fff;
+    font-weight: 800;
+  }
+  .nav-links .all-courses-link::after {
+    content: "→";
+    margin-left: 7px;
+    font-size: 12px;
+  }
+  .nav-links .all-courses-link:hover {
+    background: #2d2d2a;
+    color: #fff;
+  }
   .nav-cta {
     display: inline-flex;
     align-items: center;
@@ -1113,7 +1127,7 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
     <a class="brand" href="https://baseformasters.com/">Base for Masters</a>
     <nav class="nav-links" aria-label="Навигация">
       <a href="https://baseformasters.com/">Главная</a>
-      <a href="https://baseformasters.com/#schedule">Все курсы</a>
+      <a class="all-courses-link" href="https://baseformasters.com/#schedule">Все курсы</a>
       <a href="#dates">Даты</a>
       <a href="#program">Программа</a>
       <a href="#team">Команда</a>
