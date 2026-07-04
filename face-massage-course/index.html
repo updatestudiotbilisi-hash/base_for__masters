@@ -825,7 +825,16 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
     color: rgba(255,255,255,.88);
     font-size: 13px;
     line-height: 1.55;
-    margin-top: auto;
+    max-height: 0;
+    margin-top: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height .28s ease, opacity .2s ease, margin-top .2s ease;
+  }
+  .review.open p {
+    max-height: 260px;
+    margin-top: 14px;
+    opacity: 1;
   }
   .review-highlight {
     max-width: 240px;
@@ -855,6 +864,21 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
     font-weight: 700;
     text-transform: none;
   }
+  .review-toggle {
+    width: fit-content;
+    border: 1px solid rgba(255,255,255,.44);
+    border-radius: 999px;
+    background: rgba(255,255,255,.14);
+    color: #fff;
+    padding: 9px 12px;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .review-toggle:hover { background: rgba(255,255,255,.22); }
 
   .faq {
     max-width: 880px;
@@ -1343,25 +1367,25 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
         <video autoplay muted loop playsinline preload="none">
           <source src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/base_for__masters/c83e8096e78c1a07a684bde2a779567a0836f3ac/photo/Nastya%281%29.mp4" type="video/mp4">
         </video>
-        <div class="review-content"><strong>Анастасия<span>3 года в массаже</span></strong><div class="review-highlight">Техники, которые применяю на клиентах сразу</div><p>«До этого я делала более классический массаж лица, а у Тани увидела более глубокие техники. Уже применяю дыхание, работу с грудными мышцами и финальные элементы. Особенно помогло, что мы сначала вспоминали схему сами, а потом вместе разбирали её по пунктам: так запомнилась не только постановка рук, но и логика, что за чем идёт.»</p></div>
+        <div class="review-content"><strong>Анастасия<span>3 года в массаже</span></strong><div class="review-highlight">Техники, которые применяю на клиентах сразу</div><button class="review-toggle" type="button" aria-expanded="false">Подробнее</button><p>«До этого я делала более классический массаж лица, а у Тани увидела более глубокие техники. Уже применяю дыхание, работу с грудными мышцами и финальные элементы. Особенно помогло, что мы сначала вспоминали схему сами, а потом вместе разбирали её по пунктам: так запомнилась не только постановка рук, но и логика, что за чем идёт.»</p></div>
       </article>
       <article class="review">
         <video autoplay muted loop playsinline preload="none">
           <source src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/base_for__masters/c83e8096e78c1a07a684bde2a779567a0836f3ac/photo/ira.mp4" type="video/mp4">
         </video>
-        <div class="review-content"><strong>Ирина<span>5 лет в массаже</span></strong><div class="review-highlight">Схема сложилась в голове по шагам</div><p>«Мне понравилось, что группа была маленькая, и мы успели вложить схему в голове. Таня всё время проговаривала, что за чем идёт и зачем это нужно. Мы проходили практику ступенчато: сначала одну часть, потом вторую, потом всю схему целиком. Так я быстрее запоминаю, чем когда просто пересматриваю лекции.»</p></div>
+        <div class="review-content"><strong>Ирина<span>5 лет в массаже</span></strong><div class="review-highlight">Схема сложилась в голове по шагам</div><button class="review-toggle" type="button" aria-expanded="false">Подробнее</button><p>«Мне понравилось, что группа была маленькая, и мы успели вложить схему в голове. Таня всё время проговаривала, что за чем идёт и зачем это нужно. Мы проходили практику ступенчато: сначала одну часть, потом вторую, потом всю схему целиком. Так я быстрее запоминаю, чем когда просто пересматриваю лекции.»</p></div>
       </article>
       <article class="review">
         <video autoplay muted loop playsinline preload="none">
           <source src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/base_for__masters/c83e8096e78c1a07a684bde2a779567a0836f3ac/photo/Amalia.mp4" type="video/mp4">
         </video>
-        <div class="review-content"><strong>Амалия<span>5 лет в массаже</span></strong><div class="review-highlight">Не было шансов не запомнить</div><p>«Мы повторяли каждый круг и каждый раз проговаривали последовательность: первое, второе, третье. За счёт этого почти не было шансов не запомнить. Таня сразу поправляла постановку рук, объясняла ошибки и показывала, что изменить. Для меня это было полезно даже с опытом работы с лицом, особенно подготовка и дыхание.»</p></div>
+        <div class="review-content"><strong>Амалия<span>5 лет в массаже</span></strong><div class="review-highlight">Не было шансов не запомнить</div><button class="review-toggle" type="button" aria-expanded="false">Подробнее</button><p>«Мы повторяли каждый круг и каждый раз проговаривали последовательность: первое, второе, третье. За счёт этого почти не было шансов не запомнить. Таня сразу поправляла постановку рук, объясняла ошибки и показывала, что изменить. Для меня это было полезно даже с опытом работы с лицом, особенно подготовка и дыхание.»</p></div>
       </article>
       <article class="review">
         <video autoplay muted loop playsinline preload="none">
           <source src="https://raw.githubusercontent.com/updatestudiotbilisi-hash/base_for__masters/c83e8096e78c1a07a684bde2a779567a0836f3ac/photo/Ruslan.mp4" type="video/mp4">
         </video>
-        <div class="review-content"><strong>Руслан<span>15 лет в массаже</span></strong><div class="review-highlight">Понял технику через ощущения на себе</div><p>«Перед практикой Таня объяснила, как работать с клиентом: с чего начинать, как общаться и вести процедуру. Теории было немного, она появлялась прямо в процессе, когда возникали вопросы. Большой плюс, что мы сами были моделями и чувствовали разницу между попыткой ученика и тем, как делает Таня. В конце мы прошли весь алгоритм как финальную проверку, а буккальная часть зашла легко.»</p></div>
+        <div class="review-content"><strong>Руслан<span>15 лет в массаже</span></strong><div class="review-highlight">Понял технику через ощущения на себе</div><button class="review-toggle" type="button" aria-expanded="false">Подробнее</button><p>«Перед практикой Таня объяснила, как работать с клиентом: с чего начинать, как общаться и вести процедуру. Теории было немного, она появлялась прямо в процессе, когда возникали вопросы. Большой плюс, что мы сами были моделями и чувствовали разницу между попыткой ученика и тем, как делает Таня. В конце мы прошли весь алгоритм как финальную проверку, а буккальная часть зашла легко.»</p></div>
       </article>
     </div>
   </section>
@@ -1462,6 +1486,15 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
       const isOpen = item.classList.contains('open');
       document.querySelectorAll('.faq-item').forEach((faqItem) => faqItem.classList.remove('open'));
       if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  document.querySelectorAll('.review-toggle').forEach((button) => {
+    button.addEventListener('click', () => {
+      const review = button.closest('.review');
+      const isOpen = review.classList.toggle('open');
+      button.textContent = isOpen ? 'Свернуть' : 'Подробнее';
+      button.setAttribute('aria-expanded', String(isOpen));
     });
   });
 
