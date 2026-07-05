@@ -960,10 +960,30 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
   }
   .contact-links a {
     width: fit-content;
-    padding: 10px 14px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 14px 7px 7px;
     border-radius: 999px;
     background: #fff;
     font-size: 13px;
+    font-weight: 700;
+  }
+  .contact-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--accent);
+    color: var(--ink);
+    flex: 0 0 auto;
+  }
+  .contact-icon svg {
+    width: 16px;
+    height: 16px;
+    display: block;
   }
   form {
     display: grid;
@@ -1428,9 +1448,10 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
         <h2>Оставьте заявку</h2>
         <p>Ответим в ближайшее время, уточним поток, формат и свободные места. Без навязчивых звонков.</p>
         <div class="contact-links">
-          <a href="https://t.me/Base_for_masters">@Base_for_masters</a>
-          <a href="https://www.instagram.com/base_for__masters/">@base_for__masters</a>
-          <a href="tel:+995505557367">+995 505 557 367</a>
+          <a href="https://t.me/Base_for_masters"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 5 2 12.5l7 1.5 1.8 5.5L14 15l4.7 3.6L21 5Z"/><path d="m9 14 12-9"/></svg></span>Telegram · @Base_for_masters</a>
+          <a href="https://wa.me/995505557367"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.8c.2-.5.4-.5.7-.5h.5c.2 0 .4.1.5.4l.6 1.4c.1.2.1.4 0 .5l-.4.5c-.1.2-.2.3 0 .5.4.8 1.1 1.5 2 1.9.2.1.4.1.5-.1l.6-.7c.1-.2.4-.2.6-.1l1.4.7c.2.1.4.3.4.5 0 .6-.4 1.2-.9 1.4-.5.2-1.8.4-3.7-.6-2.2-1.1-3.6-3.1-4-4.5-.4-1.3.2-2.4.7-2.6Z"/></svg></span>WhatsApp · +995 505 557 367</a>
+          <a href="https://www.instagram.com/base_for__masters/"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></span>Instagram · @base_for__masters</a>
+          <a href="tel:+995505557367"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1A19.5 19.5 0 0 1 5.2 13 19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2.1Z"/></svg></span>Телефон · +995 505 557 367</a>
         </div>
       </div>
       <div>
