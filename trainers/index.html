@@ -1827,7 +1827,7 @@ footer {
         <div id="form-body">
         <div class="form-grid">
           <div class="form-group"><label>Имя</label><input id="f-name" type="text" placeholder="Ваше имя"></div>
-          <div class="form-group"><label>Телефон или Telegram</label><input id="f-phone" type="tel" placeholder="+995 ___ или @username"></div>
+          <div class="form-group"><label>Телефон или профиль</label><input id="f-phone" type="text" placeholder="+995 ___ или @username" autocomplete="tel" required></div>
           <div class="form-group" style="grid-column:1/-1;">
             <label>Интересующий блок</label>
             <div class="choice-row">
@@ -1971,7 +1971,30 @@ function handleSubmit() {
   const caseText = document.getElementById('f-case').value.trim() || '—';
 
   if (!name) { alert('Пожалуйста, укажите имя.'); return; }
-  if (!phone) { alert('Пожалуйста, укажите телефон или Telegram.'); return; }
+  if (messenger === '—') { alert('Пожалуйста, выберите удобный мессенджер.'); return; }
+
+  const digits = phone.replace(/\D/g, '');
+  const isPhone = digits.length >= 7 && digits.length <= 15;
+  const isTelegramUsername = /^@?[a-zA-Z0-9_]{5,32}$/.test(phone);
+  const isInstagramUsername = /^@?[a-zA-Z0-9._]{1,30}$/.test(phone);
+  const isTelegramLink = /^https?:\/\/(?:t\.me|telegram\.me)\/[a-zA-Z0-9_]{5,32}\/?$/i.test(phone);
+  const isInstagramLink = /^https?:\/\/(?:www\.)?instagram\.com\/[a-zA-Z0-9._]{1,30}\/?$/i.test(phone);
+  const validContact = messenger === 'WhatsApp'
+    ? isPhone
+    : messenger === 'Telegram'
+      ? isPhone || isTelegramUsername || isTelegramLink
+      : isInstagramUsername || isInstagramLink;
+
+  if (!validContact) {
+    const hint = messenger === 'WhatsApp'
+      ? 'Введите номер телефона с кодом страны, например +995 555 123 456.'
+      : messenger === 'Telegram'
+        ? 'Введите номер телефона, @username или ссылку t.me/username.'
+        : 'Введите @username или ссылку instagram.com/username.';
+    alert(hint);
+    document.getElementById('f-phone').focus();
+    return;
+  }
 
   const btn = document.querySelector('.form-submit');
   btn.textContent = 'Отправляем...';

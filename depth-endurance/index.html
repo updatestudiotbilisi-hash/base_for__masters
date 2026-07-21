@@ -721,7 +721,7 @@
   <div>
     <form id="cForm" class="c-form">
       <input type="text"  id="f-name"    placeholder="Имя" required>
-      <input type="text"  id="f-contact" placeholder="Телефон или Telegram" required>
+      <input type="text"  id="f-contact" placeholder="Телефон или @username" autocomplete="tel" required>
       <select id="f-format">
         <option value="" disabled selected>Формат участия</option>
         <option>Очно · Тбилиси</option>
@@ -734,7 +734,7 @@
         <option>3–7 лет</option>
         <option>7+ лет</option>
       </select>
-      <select id="f-msg">
+      <select id="f-msg" required>
         <option value="" disabled selected>Удобный мессенджер</option>
         <option>WhatsApp</option>
         <option>Telegram</option>
@@ -766,6 +766,26 @@
 <script>
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzZMb3yYzyXXxGaA-2UUvRyiC3IA9dzcFJG1RDVxIHmFSHaikBNPcyDVLWgi4m2Ii_Nuw/exec';
 
+  function validateContact(contact, messenger) {
+    const value = contact.trim();
+    const digits = value.replace(/\D/g, '');
+    const isPhone = digits.length >= 7 && digits.length <= 15;
+    const isTelegramUsername = /^@?[a-zA-Z0-9_]{5,32}$/.test(value);
+    const isInstagramUsername = /^@?[a-zA-Z0-9._]{1,30}$/.test(value);
+    const isTelegramLink = /^https?:\/\/(?:t\.me|telegram\.me)\/[a-zA-Z0-9_]{5,32}\/?$/i.test(value);
+    const isInstagramLink = /^https?:\/\/(?:www\.)?instagram\.com\/[a-zA-Z0-9._]{1,30}\/?$/i.test(value);
+
+    if (messenger === 'WhatsApp') return isPhone;
+    if (messenger === 'Telegram') return isPhone || isTelegramUsername || isTelegramLink;
+    if (messenger === 'Instagram') return isInstagramUsername || isInstagramLink;
+    return false;
+  }
+
+  document.getElementById('f-contact').addEventListener('input', (e) => e.target.setCustomValidity(''));
+  document.getElementById('f-msg').addEventListener('change', () => {
+    document.getElementById('f-contact').setCustomValidity('');
+  });
+
   // Reveal on scroll
   const rs = document.querySelectorAll('.r');
   const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('vis'); }), { threshold: 0, rootMargin: '0px 0px -40px 0px' });
@@ -784,6 +804,19 @@
   // Form → Google Apps Script
   document.getElementById('cForm').addEventListener('submit', async (e) => {
     e.preventDefault();
+    const contactInput = document.getElementById('f-contact');
+    const messenger = document.getElementById('f-msg').value;
+    contactInput.setCustomValidity('');
+    if (!validateContact(contactInput.value, messenger)) {
+      const hint = messenger === 'WhatsApp'
+        ? 'Введите номер телефона с кодом страны, например +995 555 123 456.'
+        : messenger === 'Telegram'
+          ? 'Введите номер телефона, @username или ссылку t.me/username.'
+          : 'Введите @username или ссылку instagram.com/username.';
+      contactInput.setCustomValidity(hint);
+      contactInput.reportValidity();
+      return;
+    }
     const btn = document.getElementById('submitBtn');
     btn.textContent = 'Отправляем...';
     btn.disabled = true;
@@ -791,10 +824,10 @@
     const params = new URLSearchParams({
       date:       new Date().toLocaleString('ru-RU'),
       name:       document.getElementById('f-name').value,
-      phone:      document.getElementById('f-contact').value,
+      phone:      contactInput.value.trim(),
       format:     document.getElementById('f-format').value,
       experience: document.getElementById('f-exp').value,
-      messenger:  document.getElementById('f-msg').value,
+      messenger,
       message:    document.getElementById('f-text').value,
       source:     'website-depth-endurance',
     });

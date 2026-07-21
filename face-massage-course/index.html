@@ -1457,7 +1457,7 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
       <div>
         <form id="cForm">
           <input type="text" id="f-name" placeholder="Имя" required>
-          <input type="text" id="f-contact" placeholder="Телефон или Telegram" required>
+          <input type="text" id="f-contact" placeholder="Телефон или @username" autocomplete="tel" required>
           <select id="f-flow">
             <option value="" disabled selected>Удобный поток</option>
             <option>Поток 1 · 24–26 августа</option>
@@ -1465,7 +1465,7 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
             <option>Поток 3 · 14–16 сентября</option>
             <option>Ещё не определился(ась)</option>
           </select>
-          <select id="f-msg">
+          <select id="f-msg" required>
             <option value="" disabled selected>Удобный мессенджер</option>
             <option>WhatsApp</option>
             <option>Telegram</option>
@@ -1490,8 +1490,41 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
 <script>
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxWKlJ5xGekLfrUaJz4ImexF2LC696txFIRSEp9QhsTgAep7BPjJlhicmtvZldB6vGa/exec';
 
+  function validateContact(contact, messenger) {
+    const value = contact.trim();
+    const digits = value.replace(/\D/g, '');
+    const isPhone = digits.length >= 7 && digits.length <= 15;
+    const isTelegramUsername = /^@?[a-zA-Z0-9_]{5,32}$/.test(value);
+    const isInstagramUsername = /^@?[a-zA-Z0-9._]{1,30}$/.test(value);
+    const isTelegramLink = /^https?:\/\/(?:t\.me|telegram\.me)\/[a-zA-Z0-9_]{5,32}\/?$/i.test(value);
+    const isInstagramLink = /^https?:\/\/(?:www\.)?instagram\.com\/[a-zA-Z0-9._]{1,30}\/?$/i.test(value);
+
+    if (messenger === 'WhatsApp') return isPhone;
+    if (messenger === 'Telegram') return isPhone || isTelegramUsername || isTelegramLink;
+    if (messenger === 'Instagram') return isInstagramUsername || isInstagramLink;
+    return false;
+  }
+
+  document.getElementById('f-contact').addEventListener('input', (e) => e.target.setCustomValidity(''));
+  document.getElementById('f-msg').addEventListener('change', () => {
+    document.getElementById('f-contact').setCustomValidity('');
+  });
+
   document.getElementById('cForm').addEventListener('submit', async (e) => {
     e.preventDefault();
+    const contactInput = document.getElementById('f-contact');
+    const messenger = document.getElementById('f-msg').value;
+    contactInput.setCustomValidity('');
+    if (!validateContact(contactInput.value, messenger)) {
+      const hint = messenger === 'WhatsApp'
+        ? 'Введите номер телефона с кодом страны, например +995 555 123 456.'
+        : messenger === 'Telegram'
+          ? 'Введите номер телефона, @username или ссылку t.me/username.'
+          : 'Введите @username или ссылку instagram.com/username.';
+      contactInput.setCustomValidity(hint);
+      contactInput.reportValidity();
+      return;
+    }
     const btn = document.getElementById('submitBtn');
     btn.textContent = 'Отправляем...';
     btn.disabled = true;
@@ -1499,10 +1532,10 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
     const params = new URLSearchParams({
       date: new Date().toLocaleString('ru-RU'),
       name: document.getElementById('f-name').value,
-      phone: document.getElementById('f-contact').value,
+      phone: contactInput.value.trim(),
       block: '3-дневный курс массажа лица',
       flow: document.getElementById('f-flow').value,
-      messenger: document.getElementById('f-msg').value,
+      messenger,
       message: document.getElementById('f-text').value,
       source: 'website-face-massage-variant',
     });
