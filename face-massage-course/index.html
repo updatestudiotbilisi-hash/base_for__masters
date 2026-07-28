@@ -1020,6 +1020,13 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
     cursor: pointer;
   }
   .note { color: var(--soft); font-size: 12px; }
+  .note a,
+  .footer-link {
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
   .success { display: none; padding: 30px; text-align: center; color: var(--terra); }
 
   footer {
@@ -1473,7 +1480,7 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
           </select>
           <textarea id="f-text" placeholder="Комментарий: интересующий поток, техника или вопрос"></textarea>
           <button class="submit" id="submitBtn" type="submit">Записаться на курс</button>
-          <p class="note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+          <p class="note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных и можете ознакомиться с <a href="./offer-face-massage-course.pdf" target="_blank" rel="noopener">договором оферты</a>.</p>
         </form>
         <div class="success" id="sMsg">Заявка отправлена. Мы свяжемся с вами в ближайшее время.</div>
       </div>
@@ -1482,7 +1489,7 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
 
   <footer>
     <span>BASE for MASTERS · Массаж лица · Тбилиси</span>
-    <span>Офлайн-курс · Июнь 2025</span>
+    <a class="footer-link" href="./offer-face-massage-course.pdf" target="_blank" rel="noopener">Договор оферты</a>
   </footer>
 </main>
 <a class="mobile-sticky-cta" href="#contact">Записаться</a>
