@@ -474,6 +474,21 @@ p { color: var(--text-2); font-family: 'Manrope', sans-serif; }
   font-size: 0.84rem; color: var(--text-2); line-height: 1.65;
   margin-bottom: 20px; max-width: 620px;
 }
+.course-price-line {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: -4px 0 18px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.82);
+  border: 1px solid rgba(255,255,255,0.95);
+  color: var(--text);
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+}
 .course-footer {
   display: flex; align-items: center; justify-content: space-between;
   flex-wrap: wrap; gap: 10px;
@@ -1001,6 +1016,7 @@ footer {
         </div>
         <div class="course-title">Глубина и выносливость</div>
         <div class="course-desc">Научим работать глубоко и точно — без перегруза для себя и с пользой для клиента. Техники при гипертонусе, спортивный массаж и эргономика для выносливости и чувствительности рук. Ведёт Евгений Тараканов.</div>
+        <div class="course-price-line">Доступ на 3 месяца · 50 лари</div>
         <div class="course-footer">
           <div class="course-meta">
             <div class="course-meta-item">
@@ -1024,6 +1040,7 @@ footer {
         </div>
         <div class="course-title">Баланс тела</div>
         <div class="course-desc">«Баланс тела: стопы, таз, челюсть» — учимся выявлять и корректировать нарушения осанки через работу со стопами, тазом и челюстью. Курс доступен онлайн, проходите в любое удобное время. Ведёт Даниил Худяков.</div>
+        <div class="course-price-line">Доступ на 3 месяца · 50 лари</div>
         <div class="course-footer">
           <div class="course-meta">
             <div class="course-meta-item">
@@ -1036,6 +1053,30 @@ footer {
             </div>
           </div>
           <a href="https://baseformasters.com/balance/" target="_blank" class="btn-dark" style="padding:8px 22px;font-size:0.74rem;">Подробнее →</a>
+        </div>
+      </div>
+
+      <!-- Индивидуальная отработка -->
+      <div class="course-card glass fade-up s4">
+        <div class="course-top">
+          <span class="course-tag">Индивидуально · Под запрос</span>
+          <span class="course-dates-chip upcoming">от 100 лари</span>
+        </div>
+        <div class="course-title">Индивидуальная отработка / практика</div>
+        <div class="course-desc">Персональная практика по разным техникам под кураторством преподавателя. Подходит, если нужно отработать новые приёмы, поставить руку, разобрать технику и ошибки, настроить эргономику работы мастера и собрать понятный план дальнейшей практики.</div>
+        <div class="course-price-line">Формат собирается после интервью и брифа</div>
+        <div class="course-footer">
+          <div class="course-meta">
+            <div class="course-meta-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              После брифа
+            </div>
+            <div class="course-meta-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Кураторство преподавателя
+            </div>
+          </div>
+          <a href="#contacts" class="btn-dark" style="padding:8px 22px;font-size:0.74rem;">Обсудить запрос →</a>
         </div>
       </div>
 
@@ -1352,15 +1393,22 @@ footer {
               <div style="font-family:'Unbounded',sans-serif;font-size:0.72rem;font-weight:700;color:var(--text);">Глубина и выносливость</div>
               <span style="background:linear-gradient(135deg,rgba(80,155,220,0.90),rgba(60,135,210,0.95));color:#fff;font-size:0.62rem;font-weight:800;padding:3px 10px;border-radius:50px;white-space:nowrap;">→</span>
             </div>
-            <div style="font-size:0.74rem;color:var(--text-3);font-family:'Manrope',sans-serif;">Офлайн · сентябрь 2026 · Тбилиси</div>
+            <div style="font-size:0.74rem;color:var(--text-3);font-family:'Manrope',sans-serif;">Онлайн-доступ на 3 месяца · 50 лари · офлайн в сентябре</div>
           </a>
-          <div class="contact-link" style="flex-direction:column;align-items:flex-start;gap:3px;padding:14px 0;cursor:default;border-bottom:none;">
+          <div class="contact-link" style="flex-direction:column;align-items:flex-start;gap:3px;padding:14px 0;cursor:default;">
             <div style="display:flex;align-items:center;gap:8px;width:100%;justify-content:space-between;">
               <div style="font-family:'Unbounded',sans-serif;font-size:0.72rem;font-weight:700;color:var(--text);">Баланс тела</div>
               <span style="background:rgba(80,155,220,0.12);border:1px solid rgba(80,155,220,0.25);color:rgba(55,128,205,0.9);font-size:0.62rem;font-weight:800;padding:3px 10px;border-radius:50px;white-space:nowrap;">🌐 Онлайн</span>
             </div>
-            <div style="font-size:0.74rem;color:var(--text-3);font-family:'Manrope',sans-serif;">Доступен в любое время</div>
+            <div style="font-size:0.74rem;color:var(--text-3);font-family:'Manrope',sans-serif;">Доступ на 3 месяца · 50 лари</div>
           </div>
+          <a href="#contacts" class="contact-link" style="flex-direction:column;align-items:flex-start;gap:3px;padding:14px 0;border-bottom:none;">
+            <div style="display:flex;align-items:center;gap:8px;width:100%;justify-content:space-between;">
+              <div style="font-family:'Unbounded',sans-serif;font-size:0.72rem;font-weight:700;color:var(--text);">Индивидуальная отработка</div>
+              <span style="background:linear-gradient(135deg,rgba(80,155,220,0.90),rgba(60,135,210,0.95));color:#fff;font-size:0.62rem;font-weight:800;padding:3px 10px;border-radius:50px;white-space:nowrap;">от 100 лари</span>
+            </div>
+            <div style="font-size:0.74rem;color:var(--text-3);font-family:'Manrope',sans-serif;">Под запрос · после интервью и брифа</div>
+          </a>
         </div>
       </div>
     </div>
