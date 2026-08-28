@@ -249,6 +249,12 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
     letter-spacing: -.02em;
   }
   .hero-date-chip span { color: var(--terra); }
+  .hero-date-chip.past {
+    color: var(--muted);
+    opacity: .62;
+    pointer-events: none;
+  }
+  .hero-date-chip.past span { color: var(--muted); }
   .hero-actions {
     display: flex;
     flex-wrap: wrap;
@@ -402,6 +408,11 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
     font-size: 11px;
     font-weight: 800;
   }
+  .date-pill.past {
+    opacity: .72;
+    pointer-events: none;
+  }
+  .date-pill.past span { color: var(--muted); }
 
   .section { padding: 72px 54px; border-top: 1px solid var(--line); }
   .section-head {
@@ -504,6 +515,11 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
     justify-content: space-between;
   }
   .flow-card.featured { background: var(--accent-2); border-color: #c4dba0; }
+  .flow-card.past {
+    background: var(--paper);
+    opacity: .72;
+    pointer-events: none;
+  }
   .flow-top {
     display: flex;
     justify-content: space-between;
@@ -1176,7 +1192,7 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
         <h1>Курс по массажу лица, который сразу берёшь в работу</h1>
         <p class="hero-lead">Практический курс для тех, кто хочет освоить базовый массаж лица, ручную лепку и основы буккального массажа в понятной последовательности.</p>
         <div class="hero-date-strip" aria-label="Даты курса">
-          <a class="hero-date-chip" href="#contact"><span>01</span> 24–26 августа</a>
+          <span class="hero-date-chip past"><span>01</span> 24–26 августа · прошёл</span>
           <a class="hero-date-chip" href="#contact"><span>02</span> 7–9 сентября</a>
           <a class="hero-date-chip" href="#contact"><span>03</span> 14–16 сентября</a>
         </div>
@@ -1222,7 +1238,7 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
         <div><strong>Курс массажа лица</strong> · база, лепка, буккальный</div>
       </div>
       <div class="floating-date">
-        <a class="date-pill" href="#contact"><small>Поток 01</small><strong>24–26 августа</strong><span>3 дня</span></a>
+        <span class="date-pill past"><small>Поток 01</small><strong>24–26 августа</strong><span>прошёл</span></span>
         <a class="date-pill" href="#contact"><small>Поток 02</small><strong>7–9 сентября</strong><span>3 дня</span></a>
         <a class="date-pill" href="#contact"><small>Поток 03</small><strong>14–16 сентября</strong><span>3 дня</span></a>
       </div>
@@ -1259,25 +1275,25 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
       <p>Выберите поток в августе или сентябре. В группе максимум 4 человека, поэтому места лучше бронировать заранее.</p>
     </div>
     <div class="dates-grid">
-      <a class="flow-card featured" href="#contact">
+      <div class="flow-card past">
         <div class="flow-top"><span>Поток 01</span><span>август</span></div>
         <div>
           <div class="flow-date">24–26<br>августа</div>
-          <div class="spots">Осталось 2 места из 4-х</div>
+          <div class="spots">Поток прошёл</div>
         </div>
-      </a>
-      <a class="flow-card" href="#contact">
+      </div>
+      <a class="flow-card featured" href="#contact">
         <div class="flow-top"><span>Поток 02</span><span>сентябрь</span></div>
         <div>
           <div class="flow-date">7–9<br>сентября</div>
-          <div class="spots">Осталось 3 места из 4-х</div>
+          <div class="spots">Осталось 2 места из 4-х</div>
         </div>
       </a>
       <a class="flow-card" href="#contact">
         <div class="flow-top"><span>Поток 03</span><span>сентябрь</span></div>
         <div>
           <div class="flow-date">14–16<br>сентября</div>
-          <div class="spots">Осталось 4 места из 4-х</div>
+          <div class="spots">Осталось 3 места из 4-х</div>
         </div>
       </a>
     </div>
@@ -1467,7 +1483,7 @@ src="https://www.facebook.com/tr?id=589162157439651&ev=PageView&noscript=1"
           <input type="text" id="f-contact" placeholder="Телефон или @username" autocomplete="tel" required>
           <select id="f-flow">
             <option value="" disabled selected>Удобный поток</option>
-            <option>Поток 1 · 24–26 августа</option>
+            <option disabled>Поток 1 · 24–26 августа · прошёл</option>
             <option>Поток 2 · 7–9 сентября</option>
             <option>Поток 3 · 14–16 сентября</option>
             <option>Ещё не определился(ась)</option>
